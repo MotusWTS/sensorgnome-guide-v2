@@ -13,7 +13,7 @@ The initial installation consists of:
 
 * MicroSD-card with at least 16 GB and an adapter/reader to plug into your computer.
 * A computer with Windows/Mac OS/Linux.
-* The latest **Sensorgnome software** release downloaded from [https://www.sensorgnome.net/download](https://www.sensorgnome.net/download) (or direct link as of 2023-10-10 [https://sensorgnome.s3.amazonaws.com/images/sg-armv7-rpi-2.0-rc12.zip](https://sensorgnome.s3.amazonaws.com/images/sg-armv7-rpi-2.0-rc12.zip))
+* The latest **Sensorgnome software** release downloaded from [https://www.sensorgnome.net/download](https://www.sensorgnome.net/download) (or direct link as of 2024-02-05 [https://sensorgnome.s3.amazonaws.com/images/sg-armv7-rpi-2.0-rc13.zip](https://sensorgnome.s3.amazonaws.com/images/sg-armv7-rpi-2.0-rc13.zip))
 * **Raspberry Pi Imager** installed on your computer, it can be downloaded from [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/) (alternate SD card flashing software can be used as well, such as WinDiskImager, Batena Etcher, and others).
 * **RaspberryPi** 4B, 3B+, 3B, Zero-2W, or SensorStation V1.
 * Highly recommended: **internet access** for the RaspberryPi either via WiFi or ethernet.
