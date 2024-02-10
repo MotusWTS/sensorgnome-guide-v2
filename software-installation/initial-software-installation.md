@@ -22,7 +22,7 @@ The initial installation consists of:
 
 There are multiple options for installing and configuring the software. The steps outlined here follow the recommended route. If something is not working for you: try an alternate route.
 
-In any case: **don't spend more than 10 minutes being blocked!** If it just doesn't work and you double-checked your steps: [ask for help](./#getting-help).
+In any case: **don't spend more than 10 minutes being blocked!** If it just doesn't work and you double-checked your steps: [ask for help](../#getting-help).
 
 ## Flashing the SD-card
 
@@ -39,12 +39,12 @@ SensorStations: To flash a SensorStation follow the CTT documentation to prepare
 1. Plug the microSD-card into your laptop/computer.
 2. Launch RaspberryPi Imager and:
    * click on _operating system_, choose _use custom_ (it's the last option), locate the Sensorgnome software ZIP you downloaded\
-     <img src=".gitbook/assets/image (2).png" alt="" data-size="original">![](<.gitbook/assets/image (8).png>)
-   * click on _storage_ and locate the microSDcard to flash![](<.gitbook/assets/image (14).png>)
+     <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="original">![](<../.gitbook/assets/image (8).png>)
+   * click on _storage_ and locate the microSDcard to flash![](<../.gitbook/assets/image (14).png>)
    * **Important and easy to overlook**: click on the gear icon at the bottom right\
-     ![](<.gitbook/assets/image (17).png>)
+     ![](<../.gitbook/assets/image (17).png>)
    * Focus on the settings outlined in green\
-     ![](<.gitbook/assets/image (1).png>)
+     ![](<../.gitbook/assets/image (1) (1).png>)
      * Set a hostname you will use to recognize your SG during the initial set-up (not used after that so use your initials, for example).
      * Set gnome as username and select a good password: it is used for all access to your Sensorgnome (web UI, hotspot, remote management, SSH).
      * If you will use your local WiFi to give the Sensorgnome internet access configure it here, if you will use Ethernet then skip this portion.
@@ -79,13 +79,13 @@ Once you see the 2 or 3 flashes pattern you can proceed.
 
 #### Locating the green LED
 
-Raspberry Pi 3B/4B (here with a cellular HAT):![](<.gitbook/assets/image (16).png>)
+Raspberry Pi 3B/4B (here with a cellular HAT):![](<../.gitbook/assets/image (16).png>)
 
 Raspberry Pi Zero-2W:\
-![](<.gitbook/assets/image (10).png>)
+![](<../.gitbook/assets/image (10).png>)
 
 SensorStation:\
-![](<.gitbook/assets/image (11).png>)
+![](<../.gitbook/assets/image (11).png>)
 
 #### Troubleshooting
 
@@ -118,7 +118,7 @@ You have two options for connecting to your Sensorgnome: hotspot and internet. B
 
 {% hint style="info" %}
 If you configured your Sensorgnome with internet access you have both options. If one gives you trouble: try the other!!!\
-Also, if you run into issues and the RaspberryPi has internet access then it will upload log files and you can [get help](./#getting-help).
+Also, if you run into issues and the RaspberryPi has internet access then it will upload log files and you can [get help](../#getting-help).
 {% endhint %}
 
 ## Connect to your Sensorgnome via Internet
@@ -131,27 +131,27 @@ Open the Sensorgnome Hub (SGhub) website at [https://www.sensorgnome.net](https:
 
 The table at the top shows the most recently initialized Sensorgnomes: yours may already be at the top! You can identify it using the label column which should show the hostname you entered.
 
-<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 Click on the row with your Sensorgnome, this switches to the station tab; at the top-right is a link to the web UI:\
 
 
-<figure><img src=".gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 You should see a set-up page for your Sensorgnome to confirm the password, this is needed to set the hot-spot password:\
-![](<.gitbook/assets/image (12).png>)
+![](<../.gitbook/assets/image (12).png>)
 
 After verifying the password the web UI should load, but it may take 20-30 seconds and show "odd transitional" views, please have patience and/or reload your browser tab. (There is room for improvement here!)\
 In the end, you should see the login box into which you have to enter the password you entered into the RaspberryPi Imager:\
-![](<.gitbook/assets/image (4).png>)
+![](<../.gitbook/assets/image (4) (1).png>)
 
 You are now connected to the web UI:\
-![](.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (5).png>)
 
 ## Connect to your Sensorgnome via its WiFi hot-spot
 
 {% hint style="info" %}
-The hot-spot acts as a "captive portal", which means that it looks to your computer/phone like a WiFi network typical of Airports or Hotels where you have to enter credentials or accept an agreement to get internet access. However, the Sensorgnome never actually provides internet access...
+The hot-spot acts as a "captive portal", which means that it looks to your computer/phone like a WiFi network typical of airports or hotels where you have to enter credentials or accept an agreement to get internet access. However, the Sensorgnome never actually provides internet access...
 
 Some of the issues users have encountered are:
 
@@ -262,7 +262,7 @@ For USB-connected GPS modules the tty device created may not be in the list scan
 
 In the US, the author has been successful with 2 purchases of the following GPS module available on Amazon: https://www.amazon.com/gp/product/B07P8YMVNT and the serial connection looks something like this (please use pinout diagrams!):
 
-<figure><img src=".gitbook/assets/PXL_20221030_173643526.jpg" alt=""><figcaption><p>GPS connected to rPi3 using serial cable for illustration (this is not a permanent install...)</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/PXL_20221030_173643526.jpg" alt=""><figcaption><p>GPS connected to rPi3 using serial cable for illustration (this is not a permanent install...)</p></figcaption></figure>
 
 \
 \
