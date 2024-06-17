@@ -12,7 +12,7 @@ description: >-
 
 If the "Web UI" of your Sensorgnome has multiple tabs with a red accent color it uses the new software. If it is a single web page with little formatting it is the old software.
 
-For updates on the status please refer to the [Sensorgnomads Google group](https://groups.google.com/g/sensorgnomads).
+For updates on the status please refer to the [Motus Community Forum](http://community.motus.org)
 {% endhint %}
 
 ## Getting help
@@ -20,7 +20,7 @@ For updates on the status please refer to the [Sensorgnomads Google group](https
 * Avoid getting frustrated: if it doesn't work, double-check, try again, perhaps try an alternative, but then ask for help! Don't waste hours of time.
 * If you can, connect your Sensorgnome to the internet and leave it running & connected: most of time the best troubleshooting happens using the log files it uploads.
 * To get help:
-  * Post on the [Sensorgnomads Google group](https://groups.google.com/g/sensorgnomads)
+  * Post on the [Motus Community Forum](http://community.motus.org)
   * Post in the Motus slack (sensorgnome channel)
   * Email tve at voneicken point com
 * Things that really help us help you:
