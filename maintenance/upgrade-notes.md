@@ -10,7 +10,11 @@ In order to upgrade a Sensorgnome an Internet connection is required as the Sens
 * the standard upgrade process only updates Sensorgnome software, almost all system software is left unchanged, this avoids ending up with a completely non-functional system due to a problem during the upgrade
 * it is possible to perform a full system upgrade, but perhaps swapping in an SD-card with a fresh clean image is a better option, in any case, unless there is a specific problem this is supposed to fix see the first bullet point...
 
-_Need screen shot of upgrade process here..._
+## Upgrade Process
+
+The upgrade process is managed using the SG Web UI's software tab shown below. The functionality first needs to be enabled with the `enable buttons` toggle. The next step is to run a software update check (red `check` button). In the situation shown one Sensorgnome package can be updated and many operating system packages. The red `sg upgrade` button starts the upgrade of just the Sensorgnome packages, which is the recommended action. Upgrading all the OS packages can have unintended issues.
+
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 ## Upgrading from V2.0-RC12 or prior to later versions
 
