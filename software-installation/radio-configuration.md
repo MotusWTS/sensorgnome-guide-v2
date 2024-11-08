@@ -46,6 +46,28 @@ In the end it is highly recommended to double check the correct port mappings:
 * Verify in the Web UI "Devices" that all devices are assigned a port 1 through 10 (no port should be shown in red)
 * Unplug each device in turn, watch the correct line disappear, plug it back in and watch the correct line with the correct port number reappear.
 
+## Setting the correct frequency for Lotek radios
+
+{% hint style="danger" %}
+This is a critical step for any SensorGnome (or SensorStation) listening for Lotek tags outside the Western Hemisphere. This _only_ affects Lotek compatible radios (e.g. FunCube, RTL-SDR, etc) and tags.
+{% endhint %}
+
+There are three frequencies worldwide that Motus-compatible Lotek tags broadcast on. The default configuration is set to the Western Hemisphere frequency so any SG or SensorStation deployed elsewhere needs to be configured to listen to the appropriate frequency for that region if listening for Lotek tags.
+
+| Region             | Lotek tag frequency |
+| ------------------ | ------------------- |
+| Western Hemisphere | 166.380             |
+| Europe and UK      | 150.100             |
+| Australia          | 151.500             |
+
+The frequency can easily be set via the `Radios` tab in the UI. Following the change, you can reboot using the buttons in the UI to confirm that the setting change is persistent.
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+The frequency saved in the SG is not actually the true frequency of the tag which is displayed in the UI, but rather that value minus 4 kHz. This is because the FunCubes actually resolve the tag signals better if tuned slightly below the actual frequency. The nominal tag frequency value can be viewed in the `Config` tab in the `Acquisition Configuration` section. This is the equivalent of the `deployment.txt` file in V1 SG. For example, you'll notice that if the frequency is set for 166.380, the value here will be 166.374 and if the frequency set in the UI is 150.1, the value here will be 150.096. Not only is this expected, it is actually crucial to the proper functioning of the SG.
+{% endhint %}
+
 ## Verifying successful reception
 
 To verify the correct end-to-end operation of radios some test tags are necessary. For Lotek tags a tag database with the test tags is recommended but not essential.

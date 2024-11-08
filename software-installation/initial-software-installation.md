@@ -44,7 +44,7 @@ SensorStations: To flash a SensorStation follow the CTT documentation to prepare
    * **Important and easy to overlook**: click on the gear icon at the bottom right\
      ![](<../.gitbook/assets/image (17).png>)
    * Focus on the settings outlined in green\
-     ![](<../.gitbook/assets/image (1) (1).png>)
+     ![](<../.gitbook/assets/image (1) (1) (1).png>)
      * Set a hostname you will use to recognize your SG during the initial set-up (not used after that so use your initials, for example).
      * Set gnome as username and select a good password: it is used for all access to your Sensorgnome (web UI, hotspot, remote management, SSH).
      * If you will use your local WiFi to give the Sensorgnome internet access configure it here, if you will use Ethernet then skip this portion.
