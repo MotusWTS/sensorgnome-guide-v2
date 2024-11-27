@@ -13,6 +13,7 @@
 * [Initial software installation](software-installation/initial-software-installation.md)
 * [Radio Configuration](software-installation/radio-configuration.md)
 * [Internet configuration](software-installation/internet-configuration.md)
+* [Cell modem troubleshooting](software-installation/cell-modem-troubleshooting.md)
 
 ## Maintenance
 
