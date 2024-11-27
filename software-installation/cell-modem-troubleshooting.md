@@ -237,3 +237,5 @@ false,"timing":false,"split24":false,"pps":true}
 ```
 
 This shows that the GPS has a fix and the lines with a `$GPG` prefix scroll by as the GPS reports position and time updates. If `gpsmon` just shows some cryptic info (JSON) and stops it may be worthwhile to restart `gpsd` using `sudo systemctl restart gpsd.service`&#x20;
+
+Note that the GPS info in the web interface is entirely dependent on `gpsd` so if `gpsd` (e.g. observed via `gpsmon`) doesn't know about the GPS then the web UI can't show anything. `Gpsd` only knows about a GPS after it receives and can parse some stanzas.
