@@ -2,6 +2,12 @@
 
 * [Introduction and Overview](README.md)
 
+## HARDWARE INSTALLATION
+
+* [Anatomy of a SensorGnome](hardware-installation/anatomy.md)
+* [How to build a SensorGnome](hardware-installation/buildsg.md)
+* [Sensorgnome power](hardware-installation/sensorgnome-power.md)
+
 ## Software Installation
 
 * [Initial software installation](software-installation/initial-software-installation.md)
@@ -12,12 +18,6 @@
 
 * [Checking a Sensorgnome in the field](maintenance/whattobring.md)
 * [Software upgrade](maintenance/upgrade-notes.md)
-
-## Hardware Installation
-
-* [Anatomy of a SensorGnome](hardware-installation/anatomy.md)
-* [How to build a SensorGnome](hardware-installation/buildsg.md)
-* [Underpowered SensorGnomes](hardware-installation/underpowered-sensorgnomes.md)
 
 ## Appendix
 

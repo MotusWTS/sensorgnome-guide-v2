@@ -1,11 +1,11 @@
----
-description: >-
-  This document explains how to connect to your Sensorgnome, check its status
-  via the Web Interface, download detection data, update the software, and
-  modify configuration files.
----
-
 # Introduction and Overview
+
+In this document you will find how to:
+
+* assemble Sensorgnome hardware
+* install the Sensorgnome V2 software
+* connect to a running Sensorgnome and perform maintenance tasks
+* troubleshoot when things don't work
 
 {% hint style="info" %}
 **This version of the Sensorgnome user guide is for the "new V2 software" available starting in 2022, that runs on Raspberry Pi4, Pi3, Zero-2W and SensorStation V1.**
@@ -36,7 +36,7 @@ A Sensorgnome is an automated radio receiver, designed to detect and record radi
 
 At its core, a Sensorgnome is powered by a **Raspberry Pi (RPi)**. The RPi runs the software that listens for and records the radio data picked up by the antennas. In addition to the RPi, a Sensorgnome will have one or more USB dongles -- "software-defined radios" -- that take the raw radio signals from the antennas and convert it into a digital form that can be recognized and recorded by the RPi. Finally, the Sensorgnome will include a GPS and power supply, all of which is typically housed in a heavy-duty plastic case.
 
-_For a more detailed description of the components of a_ Sensorgnome_, and how they fit together, please refer to the_ [_Appendix_](https://app.gitbook.com/@motus/s/sensorgnome/\~/diff/drafts/-MZ4ola3hAcwEqpN3XNh/appendix/anatomy)_._
+_For a more detailed description of the components of a_ Sensorgnom&#x65;_, and how they fit together, please refer to the_ [_Appendix_](https://app.gitbook.com/@motus/s/sensorgnome/~/diff/drafts/-MZ4ola3hAcwEqpN3XNh/appendix/anatomy)_._
 
 {% hint style="info" %}
 Throughout this document, we will often refer to a Sensorgnome as an **SG**, and to the Raspberry Pi as **RPi**.
@@ -46,9 +46,9 @@ Throughout this document, we will often refer to a Sensorgnome as an **SG**, and
 
 This guide is divided into four sections:
 
+* Hardware components and configuration, i.e. misc information about radios, USB, HATs, etc.
 * Initial software installation and configuration, i.e., how to get started
 * Data download and station maintenance, i.e., checking things when on-site
-* Hardware components and configuration, i.e. misc information about radios, USB, HATs, etc.
 * Appendix with additional information
 
 ## Initial deployment checklist

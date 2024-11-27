@@ -1,7 +1,7 @@
 # Sensorgnome security and networking
 
 {% hint style="info" %}
-This document is intended for security/network admins to provide an overview of the security and communication methods employed by a Sensorgnome device**.**
+This document is intended for security/network admins to provide an overview of the security and communication methods employed by a Sensorgnome devic&#x65;**.**
 {% endhint %}
 
 The Sensorgnome (SG) software is open source and available for audit at:

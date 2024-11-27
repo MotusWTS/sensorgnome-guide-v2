@@ -16,6 +16,14 @@ Sensorgnomes contain the following components:
 
 ## Raspberry Pi
 
+### Models <a href="#rpi-ports-and-slots" id="rpi-ports-and-slots"></a>
+
+* rPi 3B+ is the recommended model to use for a Sensorgnome due to the fact that its USB ports can directly support multiple FUNcube dongles. The rPi 3B ("non-plus") works just as well.
+* rPi 4B also works, however its USB subsystem may cause difficulties as described in \[link missing]. However, with some attention to where FCDs are plugged in it can work great. The performance advantage and USB 3.0 support over a rPi 3B don't really come to bear in the Sensorgnome use-case.
+* rPi Zero 2W can be useful in portable applications or other experiments. Due to the fact that it has only one micro-USB port it is not convenient to hook up lots of radios, but it does work.
+* rPi 5 is not currently supported due to the fact that it requires a 64-bit operating system build and corresponding 64-bit application builds, which are not currently set-up. The rPi 5 hardware does not offer any benefits (at least none we know of) and it's more expensive and uses more power.
+* rPi 1 and rPi 2 versions are not supported due to the fact that their processors cannot run the operating system version used for Sensorgnomes V2.
+
 ### Ports <a href="#rpi-ports-and-slots" id="rpi-ports-and-slots"></a>
 
 The numbering of the USB ports is very important when attaching antennas since this information is recorded along with detection data and can be used to determine the direction and time of approach or departure of a tagged animal.
@@ -70,7 +78,7 @@ Lastly, there are two indicator lights on the bottom of the Ethernet port. When 
 
 **a)** The Raspberry Pi. The colour of the RPi case may vary between Sensorgnomes’s but they will also be roughly the same size
 
-**b)** FunCUBE Dongles. A Raspberry Pi SG can accommodate up to 4 dongles plugged directly into the RPi. In order to accommodate additional antennas, a USB hub would be required. The cables from the antennas will plug into the free end of the dongles.
+**b)** FunCUBE Dongles. A Raspberry Pi SG can accommodate up to 4 dongles plugged directly into the RPi (however, an rPi 4B can only support one directly plugged in FUNcube!). In order to accommodate additional antennas, a USB hub would be required. The cables from the antennas will plug into the free end of the dongles.
 
 **c)** This is the inside view of the button used to activate the WiFi hotspot.
 
