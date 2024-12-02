@@ -44,6 +44,18 @@ Check for "undervoltage condition" in the system log (`/var/log/syslog`)
 
 When a Sensorgnome isn't receiving enough power -- that is, the voltage and/or current is lower than the device is rated for -- it can result in a malfunctioning station that doesn't collect data.&#x20;
 
+### Using Power over Ethernet (PoE)
+
+While Raspberry Pis don't have power-over-ethernet (PoE) built-in it is possible to use PoE with "splitters" that separate the power and ethernet at the device end. For reference, a good page about PoE is https://en.wikipedia.org/wiki/Power\_over\_Ethernet and it's ... confusing... The table at the end of the page in the Pinouts section is a good summary.
+
+The recommended set-up with PoE is to use a PoE switch (which will most likely use "gigabit mode A" in the table) and a splitter with a built-in voltage converter. The splitter to use depends on the rPi model: for an rPi3 get a splitter that provides 5V on a micro-USB connector (example [https://www.amazon.com/gp/product/B07CNKX14C](https://www.amazon.com/gp/product/B07CNKX14C/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8\&psc=1)), for an rPi4 get a USB-C splitter (example [https://www.amazon.com/UCTRONICS-PoE-Splitter-USB-C-Compliant/dp/B087F4QCTR](https://www.amazon.com/UCTRONICS-PoE-Splitter-USB-C-Compliant/dp/B087F4QCTR/ref=sr_1_2_sspa?crid=1SF3TJCS9Z02C\&dib=eyJ2IjoiMSJ9.rGxZdSEeMTnPz2-Sk_U4Yuhnq74ngpc0onM6N3DBQAd-FRXUSVogjqrAfqfe07TM915FNPFBNt4h_L5-YPV5Ce2UdKcMnX9xBF817Z0chMC9uF0SgaOcYhG58cp1w_FTHS06GFBGQFDHe1mf96gPkT9HG4uvKvlozzzW416KoLa7fX_jxIQrKLXgzJVhznjcjfLkx3gG1X5SXsTm5i5YHMHsdADqPu2iOgSmHy8kM44.xst_NNLDDx65EZ58ZGW63g0CX72TiRtYyoYOv3FUN6I\&dib_tag=se\&keywords=poe+splitter+usb-c+pd\&qid=1733157954\&sprefix=poe+splitter+usb-c+pd%2Caps%2C254\&sr=8-2-spons\&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY\&psc=1)), for a SensorStation get a splitter that provides 12V (example [https://www.amazon.com/gp/product/B0CL2CBS75/](https://www.amazon.com/gp/product/B0CL2CBS75/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8\&psc=1)). For a rPi4 it may be advantageous to use a splitter that supports PD (power delivery) so it outputs 5.1V, but those are more pricey and possibly overkill. The above links are intended as suggestions not recommendations as the longevity of these devices has not been tested, there are definitely more "industrial" versions available.
+
+Overall, the important part is to ensure that the switch/injector and splitter match. Virtually all PoE switches in 2024 are Gigabit 802.3af (48V) compliant (or more advanced 803.2at/bt) and use "mode A" (see Wikipedia table). Using a "gigabit" and/or "802.3af" splitter ensures compatibility assuming it's properly made.&#x20;
+
+A common alternative that historically predates 802.3af is to use 2 wire pairs for 100Mbit ethernet and 2 pairs for 24V. This is still common in Ubiquiti equipment as well as that of other vendors, which perpetuates the confusion. In addition, this mode of operation is "covered" by 802.3af mode B, except that 802.3af requires 48V, not 24V. But 802.3af splitters as mentioned above _should_ work fine with 24V too.
+
+One catch with non-gigabit splitters (e.g. the 24V set-up) is that if they are used to connect two gigabit devices (switch and rPi) then it is often necessary to force the use of 100Mbps at one of the two ends, i.e. either using the switch web interface (in the case of a managed switch) or `ethtool` on the rPi.
+
 ### Underpowered Sensorgnome - how does it occur?
 
 Underpowered Sensorgnomes typically work fine when set-up and it's later that problem crop up. Sometimes they reboot but more often some peripheral malfunctions. Often USB-attached devices restart on their own. In some situations the Sensorgnome just seems "flaky" and a different problem crops up every time.
