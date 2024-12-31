@@ -27,8 +27,6 @@ From the point of view of making the GPS work: the GPS HAT contains a small eepr
 
 ## Discrete GPS unit
 
-### How do I connect a generic/discrete GPS?
-
 It is possible to connect a "generic" GPS breakout board to the Sensorgnome. Please purchase from a reputable seller as many "U-Blox" GPS breakouts are fake and contain knock-off devices. A (genuine) U-Blox GPS is a good choice because it supports a fast binary protocol which gives good time synchronization without PPS (pulse per second) signal.
 
 You can connect a GPS either via USB or serial. If you use USB "it should just work", although if the web UI shows "no-dev" 5 minutes after boot then post on the forum. (It does sometimes take a couple of _minutes_ for gpsd to detect and configure the GPS device and then the Web UI to figure that out, use `gpsmon` on the commandline to get quicker feedback.)
@@ -38,21 +36,11 @@ You can also connect via serial using 4 jumper wires. You will need to connect t
 After hooking up the GPS hardware you need to boot your rPi and SSH in. Then issue the commands (this will reboot the SG!):
 
 ```
-sudo raspi-config nonint do_serial 2
+sudo tee /etc/sensorgnome/force-hat <<<"Ultimate GPS HAT"
 sudo reboot
 ```
 
 To troubleshoot the GPS log in via SSH and run `gpsmon`, if you just get a couple of lines then gpsd (the GPS management daemon) is not talking to the GPS. Double-check your connections (especially RX-TX cross-over), ensure the Sensorgnome is connected to the internet so it can upload its log files and contact the sensorgnomads mailing list with the ID of your Sensorgnome. If gpsmon shows lots of GPS info that updates every second or two then your GPS is working fine.
-
-{% hint style="warning" %}
-For Sensorgnomes running software more recent than V2.0 the following two commands are required instead:
-
-```
-sudo raspi-config nonint do_serial_hw 1
-sudo raspi-config nonint do_serial_cons 0
-sudo reboot
-```
-{% endhint %}
 
 Another troubleshooting avenue is `/var/log/syslog`: restart gpsd (`sudo systemctl restart gpsd`) and look at what it prints in `/var/log/syslog`. It goes through a number of devices, including `/dev/ttyUSB0` and `/dev/serial0`. If you see an error for the device your GPS is using that may provide clues about what is going wrong.
 
