@@ -7,6 +7,7 @@
 * [Anatomy of a SensorGnome](hardware-installation/anatomy.md)
 * [How to build a SensorGnome](hardware-installation/buildsg.md)
 * [Sensorgnome power](hardware-installation/sensorgnome-power.md)
+* [GPS options](hardware-installation/gps-options.md)
 
 ## Software Installation
 

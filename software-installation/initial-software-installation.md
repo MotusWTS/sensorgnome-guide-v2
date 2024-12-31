@@ -240,30 +240,3 @@ Radio tag/pulse detections occur independently of time synchronization, i.e., th
 
 Note that in older versions of the software the timestamps of a Sensorgnome without time syn were way in the past, such as pre-2010. This is no longer the case because it prevents HTTPS communication due to the fact that all certificates are flagged as invalid.
 
-### How do I connect a generic/discrete GPS?
-
-_This section is a little outdated. Please use the Adafruit HAT or a cellular modem (which has a GPS in it). Alternatively, connect a GPS via USB such as the module mentioned at the end below._
-
-If you are not using the Adafruit GPS HAT or the Sixfab cellular HAT you can connect a "generic" GPS breakout board. Please purchase from a reputable seller as many "U-Blox" GPS breakouts are fake and contain knock-off devices. A (genuine) U-Blox GPS is a good choice because it supports a fast binary protocol which gives good time synchronization without PPS (pulse per second) signal.
-
-You can connect a GPS either via USB or serial. If you use USB "it should just work", although if the web UI shows "no-dev" 5 minutes after boot then contact the sensorgnomads mailing list or see below. (It does sometimes take a couple of _minutes_ for gpsd to detect and configure the GPS device and then the Web UI to figure that out, use `gpsmon` on the commandline to get quicker feedback.)
-
-You can also connect via serial using 4 jumper wires. You will need to connect to the Raspberry Pi's GND, 5V, Uart-TX/gpio14, and Uart-RX/gpio15. Search for "raspberry pinout" and you will find many pictures that show the rPi connector pin assignment. The 4 pins you need to connect to are all next to each other on the outer row. Note that TX on the rPi goes to RX on the GPS module and RX on the rPi to TX on the GPS.
-
-After hooking up the GPS hardware you need to boot your rPi and SSH in. Then issue the command:\
-`sudo raspi-config nonint do_serial 2`\
-and reboot. This disables the linux login console on the serial port but keeps the port enabled. If you prefer to use raspi-config interactively (i.e. run `sudo raspi-config`) what you need to do is select the primary serial port, disable the console on it, but keep the port enabled.
-
-To troubleshoot the GPS log in via SSH and run `gpsmon`, if you just get a couple of lines then gpsd (the GPS management daemon) is not talking to the GPS. Double-check your connections (especially RX-TX cross-over), ensure the Sensorgnome is connected to the internet so it can upload its log files and contact the sensorgnomads mailing list with the ID of your Sensorgnome. If gpsmon shows lots of GPS info that updates every second or two then your GPS is working fine.
-
-Another troubleshooting avenue is `/var/log/syslog`: restart gpsd (`sudo systemctl restart gpsd`) and look at what it prints in `/var/log/syslog`. It goes through a number of devices, including `/dev/ttyUSB0` and `/dev/serial0`. If you see an error for the device your GPS is using that may provide clues about what is going wrong.
-
-For USB-connected GPS modules the tty device created may not be in the list scanned by GPSD. Use `lsusb` to verify the presence of your GPS device and `ls -l /dev/serial/by-id` to glean which ttyXXX port is used. Then edit `/etc/default/gpsd` to make sure it's in the list and restart gpsd (`sudo systemctl restart gpsd`).
-
-In the US, the author has been successful with 2 purchases of the following GPS module available on Amazon: https://www.amazon.com/gp/product/B07P8YMVNT and the serial connection looks something like this (please use pinout diagrams!):
-
-<figure><img src="../.gitbook/assets/PXL_20221030_173643526.jpg" alt=""><figcaption><p>GPS connected to rPi3 using serial cable for illustration (this is not a permanent install...)</p></figcaption></figure>
-
-\
-\
-\
