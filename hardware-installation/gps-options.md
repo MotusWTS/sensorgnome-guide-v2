@@ -11,6 +11,8 @@ The Sensorgnome is best equipped with a GPS although this is not a hard requirem
 * it provides accurate time to timestamp tag detections
 * it provides accurate station location even if the SG is relocated and no-one updates the metadata manually (common...)
 
+If no GPS unit is present the Sensorgnome can obtain the time from the network using NTP (network time protocol). This assumes an always-on internet connection. If neither GPS nor NTP are available the date\&time will be completely unusable at the first reboot as the Raspberry Pi hardware does not have any real-time clock.
+
 ## Cell modem GPS
 
 If the Sensorgnome is equipped with a cell modem then in the vast majority of cases it uses the generally built-in GPS unit. This does require connecting a GPS antenna to the cell modem and ensuring it has good sky view (and is not inside of a metal enclosure).
@@ -29,7 +31,7 @@ From the point of view of making the GPS work: the GPS HAT contains a small eepr
 
 It is possible to connect a "generic" GPS breakout board to the Sensorgnome. Please purchase from a reputable seller as many "U-Blox" GPS breakouts are fake and contain knock-off devices. A (genuine) U-Blox GPS is a good choice because it supports a fast binary protocol which gives good time synchronization without PPS (pulse per second) signal.
 
-You can connect a GPS either via USB or serial. If you use USB "it should just work", although if the web UI shows "no-dev" 5 minutes after boot then post on the forum. (It does sometimes take a couple of _minutes_ for gpsd to detect and configure the GPS device and then the Web UI to figure that out, use `gpsmon` on the commandline to get quicker feedback.)
+You can connect a GPS either via USB or serial. Connecting via USB is recommended and "it should just work", although if the web UI shows "no-dev" 5 minutes after boot then post for help on the forum. (It does sometimes take a couple of _minutes_ for gpsd to detect and configure the GPS device and then the Web UI to figure that out, use `gpsmon` on the commandline to get quicker feedback.)
 
 You can also connect via serial using 4 jumper wires. You will need to connect to the Raspberry Pi's GND, 5V, Uart-TX/gpio14, and Uart-RX/gpio15. Search for "raspberry pinout" and you will find many pictures that show the rPi connector pin assignment. The 4 pins you need to connect to are all next to each other on the outer row. Note that TX on the rPi goes to RX on the GPS module and RX on the rPi to TX on the GPS. In addition, if the GPS provides a PPS pin (Pulse Per Second) it can be connected to pin 7 / GPIO4.
 
