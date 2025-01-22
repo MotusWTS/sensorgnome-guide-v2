@@ -24,6 +24,7 @@
 ## Appendix
 
 * [Sensorgnome security and networking](appendix/sensorgnome-security-and-networking.md)
+* [Updating the boot number](appendix/updating-the-boot-number.md)
 
 ## Outdated <a href="#appendix" id="appendix"></a>
 
