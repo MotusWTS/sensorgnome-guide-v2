@@ -1,9 +1,3 @@
----
-description: >-
-  It's important to update the boot number any time you replace or upgrade a
-  SensorGnome with a completely fresh SD card
----
-
 # Updating the boot number
 
 ### What is the boot number?
@@ -18,19 +12,19 @@ The boot number is an essential component when processing detection data as it c
 
 ### When is the boot number reset?
 
-When upgrading a SensorGnome's software with a _newly flashed_ SD card, the boot number in the file names will be reset to `0`. This applies to both V2 SG with a card that's been flashed with the software _and_ V1 SG where the software files have copied to a new card. Since this will violate the assumption that the boot number always increments, this may result in missing or false detections until the [receiver data is reprocessed](https://docs.motus.org/en/about-motus/how-data-are-processed/reprocessing-receiver-data).
+When upgrading a SensorGnome's software with a _newly flashed_ SD card, the boot number in the file names will be reset to `0`. This applies to V2 SG with a card that's been flashed with the software,  V1 SG where the software files have copied to a new card, and SG running on BeagleBones. Since this will violate the assumption that the boot number always increments, this may result in missing or false detections until the [receiver data is reprocessed](https://docs.motus.org/en/about-motus/how-data-are-processed/reprocessing-receiver-data).
 
 {% hint style="success" %}
-If updating the V2 SG over the internet using the web interface, the proper boot number sequence is retained.
+If updating a V2 SG over the internet using the web interface, the proper boot number sequence is retained.
 {% endhint %}
 
 ### How to update the boot number
 
 {% hint style="warning" %}
-Updating the boot number is only possible on the V2 SensorGnome software
+Updating the boot number is only possible on the V2 SensorGnome software running on a Raspberry Pi.
 {% endhint %}
 
-Connect to the SensorGnome and visit the web interface. From the landing page, you should be able to see the current boot number (as the screenshot above shows).
+**Before updating the software**, connect to the SensorGnome and visit the web interface. From the landing page, you should be able to see the current boot number (as the screenshot above shows).
 
 Navigate to the "software" tab, and on the lower right select the "edit" button (the one that looks like a pencil) to update the boot number.&#x20;
 
