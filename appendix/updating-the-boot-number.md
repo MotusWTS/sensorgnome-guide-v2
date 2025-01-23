@@ -22,6 +22,8 @@ If updating a V2 SG over the internet using the web interface, the proper boot n
 
 {% hint style="warning" %}
 Updating the boot number is only possible on the V2 SensorGnome software running on a Raspberry Pi.
+
+If you cannot, or do not want to, run V2 SG on a Raspberry Pi, the boot number will only be corrected after the receiver data is reprocessed. You can read more about reprocessing receiver data [here](https://docs.motus.org/en/about-motus/how-data-are-processed/reprocessing-receiver-data).
 {% endhint %}
 
 **Before updating the software**, connect to the SensorGnome and visit the web interface. From the landing page, you should be able to see the current boot number (as the screenshot above shows).
@@ -31,4 +33,6 @@ Navigate to the "software" tab, and on the lower right select the "edit" button 
 Feel free to set the number slightly higher than necessary then reboot the SG and confirm that the change has persisted when you connect again.
 
 <figure><img src="../.gitbook/assets/2025-01-22_111841 (1).png" alt=""><figcaption></figcaption></figure>
+
+
 
