@@ -83,7 +83,7 @@ If you cannot, or prefer not to, run V2 SG on a Raspberry Pi, the boot number wi
 
 1. **Before updating the software**, connect to the SensorGnome and visit the web interface. From the landing page, you should be able to see the current boot number (as the screenshot above shows). Write this number down or otherwise commit it to memory.
 2. After you have upgraded and initiated the new software, connect to the SG and navigate to the "Software" tab to update the boot number. Recalling the previous value, set the new number higher higher than necessary then reboot the SG and confirm that the change has persisted when you connect again.&#x20;
-3. Reboot the SG and connect to it&#x20;
+3. Reboot the SG and connect to it to confirm that the change is persistent.
 
 <figure><img src="../.gitbook/assets/2025-01-22_112412.png" alt=""><figcaption></figcaption></figure>
 
