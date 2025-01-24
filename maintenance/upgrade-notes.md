@@ -87,3 +87,7 @@ If you cannot, or prefer not to, run V2 SG on a Raspberry Pi, the boot number wi
 
 <figure><img src="../.gitbook/assets/2025-01-22_112412.png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+When a receiver’s data is reprocessed (also referred to as re-running), the correct boot number sequence is restored and any spurious or missing detections resolved – assuming all tag deployment metadata is up-to-date. You can read more about receiver data reprocessing [here](https://docs.motus.org/en/about-motus/how-data-are-processed/reprocessing-receiver-data).
+{% endhint %}
+
