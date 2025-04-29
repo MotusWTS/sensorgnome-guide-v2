@@ -12,6 +12,8 @@ In this document you will find how to:
 
 If the "Web UI" of your Sensorgnome has multiple tabs with a red accent color it uses the new software. If it is a single web page with little formatting it is the old software.
 
+If you are using the V1 software, refer to the [Sensorgnome user guide for the V1 software](https://docs.motus.org/sensorgnome).&#x20;
+
 For updates on the status please refer to the [Motus Community Forum](http://community.motus.org)
 {% endhint %}
 
