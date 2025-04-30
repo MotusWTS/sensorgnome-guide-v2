@@ -68,7 +68,7 @@ If you do nothing, the SG obtains a token from a Sensorgnome server and uploads 
 
 If you start with option 1 you can, at any time, add the `sg-uploader` user to your project and give it "update" access only to "data", all other permissions can be none:
 
-![](<../.gitbook/assets/image (6).png>)
+![](<../.gitbook/assets/image (12).png>)
 
 The result of this is that the upload jobs will be part of your project and can be seen like any manual data uploads.
 

@@ -54,13 +54,13 @@ The Web UI has fairly simple info about the cellular connection. It does not all
 
 The Sensorgnome Web UI's network tab has a panel for cellular connections:
 
-<figure><img src="../.gitbook/assets/image (21).png" alt="" width="445"><figcaption><p>Cellular panel on the network tab of the Sensorgnome Web UI</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27).png" alt="" width="445"><figcaption><p>Cellular panel on the network tab of the Sensorgnome Web UI</p></figcaption></figure>
 
 This screen shot shows a modem that is successfully connected. The first item to look at is that state: the (i) brings up a brief explanation of common states. If the modem doesn't connect it often says "enabled" but then cycles through "registering" or "searching" over the course of a minute or two.
 
 When connected ensure that the Sensorgnome got an IP address:
 
-<figure><img src="../.gitbook/assets/image (22).png" alt="" width="296"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28).png" alt="" width="296"><figcaption></figcaption></figure>
 
 In some situations the modem may also show a list of providers at the bottom of the panel. This at least indicates that "something is working".
 

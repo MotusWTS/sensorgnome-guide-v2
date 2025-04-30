@@ -67,7 +67,7 @@ This link, using `my.local-ip.co` is there to make the certificate check used by
 
 If the Sensorgnome is connected to the internet it automatically uploads data to Motus and manual downloads are not required, except for the paranoid ;-) . You can check the status on the Files tab:
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Web UI for upload/download: <strong>upload</strong>=to Motus, <strong>download</strong>=to laptop/phone</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Web UI for upload/download: <strong>upload</strong>=to Motus, <strong>download</strong>=to laptop/phone</p></figcaption></figure>
 
 The Sensorgnome keeps track of which files have been _uploaded_ to Motus servers and which files have been _downloaded_ to a computer using the web UI.
 
@@ -82,7 +82,7 @@ The downloaded ZIP files can and should be uploaded as-is to Motus using the Mot
 
 ### On the home (leftmost) tab:
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 * check that the time source is as expected, e.g. NTP (network time protocol) or GPS
 * check that the boot time makes sense (some Sensorgnomes reboot daily in winter due to power constraints but generally they should remain on all the time)
@@ -91,7 +91,7 @@ The downloaded ZIP files can and should be uploaded as-is to Motus using the Mot
 
 ### On the Radios tab
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 * Check that the radio number match up with what's installed and that there are no invalid ports
 * Check that the ports (in the port mapping, e.g. 1, 5, 6, 7 in this screen shot) are as expected

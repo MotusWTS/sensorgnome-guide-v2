@@ -15,7 +15,7 @@ In order to upgrade a Sensorgnome an Internet connection is required as the Sens
 
 The upgrade process is managed using the SG Web UI's software tab shown below. The functionality first needs to be enabled with the `enable buttons` toggle. The next step is to run a software update check (red `check` button). In the situation shown one Sensorgnome package can be updated and many operating system packages. The red `sg upgrade` button starts the upgrade of just the Sensorgnome packages, which is the recommended action. Upgrading all the OS packages can have unintended issues.
 
-<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 ## Upgrading from V2.0-RC12 or prior to later versions
 
@@ -34,22 +34,22 @@ This upgrade requires patience because the code in those versions could not deal
 1.  On the software tab, "enable changes"\
 
 
-    <figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 2.  Run "check", have a minute of patience and you should see available updates. If it doesn't seem to complete run "check" again
 
-    <figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 3.  Run "sg-upgrade" and monitor the log (or get a tea/coffee for 2-3 minutes), after a couple of minutes the log will seem to be done (scroll down in the widget), showing:\
 
 
-    <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 4.  Wait another minute and you may notice the green LED on the rPi stop blinking for a bit as it reboots, then reload your browser tab (you may have to reconnect to the hot-spot if you're using that to access the Sensorgnome), you should see a prompt to verify the SG password, if not, wait another minute and reload the browser tab again:\
 
 
-    <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 5.  After entering the password the web UI should load, however, it may take a while (20-30 secs) and you may have to reconnect to the hot-spot again (sorry). On the software tab confirm that you are now running version 2023-115 or later\
 
 
-    <figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 ## Updating the boot number
 

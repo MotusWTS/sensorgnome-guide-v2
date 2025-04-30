@@ -36,7 +36,7 @@ To keep installers on their toes the port numbering is reversed between models 3
 
 #### Raspberry Pi 4B
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 ### SD-card slot
 
