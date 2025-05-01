@@ -26,6 +26,10 @@
 * [Sensorgnome security and networking](appendix/sensorgnome-security-and-networking.md)
 * [Updating the boot number](appendix/updating-the-boot-number.md)
 
+***
+
+* [Software History and why V2](software-history-and-why-v2.md)
+
 ## Outdated <a href="#appendix" id="appendix"></a>
 
 * [Uploading a local tag database](appendix-1/localtagdb.md)
