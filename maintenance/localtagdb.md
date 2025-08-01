@@ -16,7 +16,19 @@ If you are installing a station that detects Lotek tags, it is often useful to k
 
 Viewing your live tag detections can also be useful when deploying tags or as a make-shift manual tracking device when a Lotek receiver is unavailable.
 
-This works by using a local version of the tag finder algorithm ([`find_tags_unifile`](https://github.com/MotusWTS/find_tags)) in comparison with the tag recordings provided during registration. Note that this local version differs from the version found on Motus, mainly in that Motus searches for tags from all projects across the network (but only those known to be actively deployed during the given time period) whereas this method will only compare raw radio data with the tag patterns it has been provided, regardless of deployment period.
+This works by using a local version of the tag finder algorithm ([`find_tags_unifile`](https://github.com/MotusWTS/find_tags)) in comparison with the tag recordings provided during registration.
+
+{% hint style="danger" %}
+There are some **very** important differences to be aware of between the tagfinder that runs on a SG and the one that runs on the Motus Server.&#x20;
+{% endhint %}
+
+The local tagfinder differs from the version found on Motus, in some key respects:
+
+* It is only aware of the tags that you have provided, so its candidate list is minimal. It might therefore assign raw data to one of your tags even if a more suitable candidate exists in the Motus database
+* It does not use deployment period or estimated battery life to assign data to candidate tags so it might "detect" a tag that has been dead for many years&#x20;
+* It uses none of the [filters that are applied](https://docs.motus.org/en/about-motus/how-data-are-processed/public-data-filters) on the Motus website (and in the R data)&#x20;
+
+All of this means that you will very often get different results on the local tagfinder as with data processed by the Motus server. Despite this, uploading a local tag database is recommended any time you are deploying tags.
 
 ### Steps
 
