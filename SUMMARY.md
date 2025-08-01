@@ -19,6 +19,7 @@
 ## Maintenance
 
 * [Checking a Sensorgnome in the field](maintenance/whattobring.md)
+* [Uploading a local tag database](maintenance/localtagdb.md)
 * [Software upgrade](maintenance/upgrade-notes.md)
 
 ## Appendix
@@ -32,6 +33,5 @@
 
 ## Outdated <a href="#appendix" id="appendix"></a>
 
-* [Uploading a local tag database](appendix-1/localtagdb.md)
 * [Reflash FUNcube dongle firmware](appendix-1/fcdfirmware.md)
 * [Motus data file formats](appendix-1/fileformats.md)
