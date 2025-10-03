@@ -59,7 +59,7 @@ Some Sensorgnomes may be connected to the local building/campus WiFi or Ethernet
 
 Over a WiFi network or Ethernet the Sensorgnome uses HTTPS, i.e. encryption. If you access it using HTTP you will see a redirect page that shows a link like:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Sensorgnome redirect page when accessed using HTTP</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Sensorgnome redirect page when accessed using HTTP</p></figcaption></figure>
 
 This link, using `my.local-ip.co` is there to make the certificate check used by HTTPS work. However, if you r Sensorgnome is not regularly updated the certificate may be out of date and you may have to jump through hoops to make your browser proceed. (This is why it's typically easier to use the hotspot.)
 

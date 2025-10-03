@@ -21,17 +21,11 @@
 * [Checking a Sensorgnome in the field](maintenance/whattobring.md)
 * [Uploading a local tag database](maintenance/localtagdb.md)
 * [Software upgrade](maintenance/upgrade-notes.md)
+* [Updating the boot number](maintenance/updating-the-boot-number.md)
 
 ## Appendix
 
 * [Sensorgnome security and networking](appendix/sensorgnome-security-and-networking.md)
-* [Updating the boot number](appendix/updating-the-boot-number.md)
-
-***
-
-* [Software History and why V2](software-history-and-why-v2.md)
-
-## Outdated <a href="#appendix" id="appendix"></a>
-
-* [Reflash FUNcube dongle firmware](appendix-1/fcdfirmware.md)
-* [Motus data file formats](appendix-1/fileformats.md)
+* [Motus data file formats](appendix/fileformats.md)
+* [Software History and why V2](appendix/software-history-and-why-v2.md)
+* [CTT Motus dongles](appendix/ctt-motus-dongles.md)
