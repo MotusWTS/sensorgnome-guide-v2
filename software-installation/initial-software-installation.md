@@ -14,7 +14,7 @@ The initial installation consists of:
 * MicroSD-card with at least 16 GB and an adapter/reader to plug into your computer.
 * A computer with Windows/Mac OS/Linux.
 * The latest **Sensorgnome software** release downloaded from [https://www.sensorgnome.net/download](https://www.sensorgnome.net/download)
-* **Raspberry Pi Imager** installed on your computer, it can be downloaded from [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/) (alternate SD card flashing software can be used as well, such as WinDiskImager, Batena Etcher, and others).
+* **Raspberry Pi Imager** installed on your computer, the latest version can be downloaded from [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/) or at [this link](https://github.com/raspberrypi/rpi-imager/releases/download/v1.9.6/imager-1.9.6.exe) for version 1.9.6. Alternate SD card flashing software can be used as well, such as WinDiskImager, Batena Etcher, and others.
 * **RaspberryPi** 4B, 3B+, 3B, Zero-2W, or SensorStation V1.
 * Highly recommended: **internet access** for the RaspberryPi either via WiFi or ethernet.
 
@@ -133,8 +133,7 @@ The table at the top shows the most recently initialized Sensorgnomes: yours may
 
 <figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
-Click on the row with your Sensorgnome, this switches to the station tab; at the top-right is a link to the web UI:\
-
+Click on the row with your Sensorgnome, this switches to the station tab; at the top-right is a link to the web UI:<br>
 
 <figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
