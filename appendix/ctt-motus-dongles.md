@@ -27,7 +27,7 @@ _CTT stopped manufacturing these dongles in early 2023. However, they have gener
 
 **4)** Within the newly unzipped directory, run the `Feather32u4Programmer.exe` program. It should look something like this:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>CTT Dongle programming window</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>CTT Dongle programming window</p></figcaption></figure>
 
 **5)** Once the program window opens, from the drop-down box, select the COM port that the Feather device is connected to. If you have multiple COM ports listed, you can identify the correct port by (a) noting which COM ports are listed, (b) unplugging the device, (c) pressing the`Refresh` button, (d) see which port has disappeared from the list of COM ports, (e) plugging the device back in, and (f) refreshing again and selecting the new COM port.
 

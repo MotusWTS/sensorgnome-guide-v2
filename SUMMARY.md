@@ -19,6 +19,7 @@
 ## Maintenance
 
 * [Checking a Sensorgnome in the field](maintenance/whattobring.md)
+* [Downloading data](maintenance/downloading-data.md)
 * [Uploading a local tag database](maintenance/localtagdb.md)
 * [Software upgrade](maintenance/upgrade-notes.md)
 * [Updating the boot number](maintenance/updating-the-boot-number.md)
