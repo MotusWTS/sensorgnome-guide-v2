@@ -11,7 +11,8 @@
 
 ## Software Installation
 
-* [Initial software installation](software-installation/initial-software-installation.md)
+* [Software installation](software-installation/initial-software-installation.md)
+* [Connecting to your SensorGnome](software-installation/connecting-to-your-sensorgnome.md)
 * [Radio Configuration](software-installation/radio-configuration.md)
 * [Internet configuration](software-installation/internet-configuration.md)
 * [Cell modem troubleshooting](software-installation/cell-modem-troubleshooting.md)

@@ -2,7 +2,7 @@
 description: Flashing a microSD card, booting the Sensorgnome, and connecting to it.
 ---
 
-# Initial software installation
+# Software installation
 
 The initial installation consists of:
 
@@ -100,98 +100,7 @@ SensorStation:\
   * ensure you used the correct SSID and password in the RaspberryPi Imager configuration (i.e., reflash the card)
   * use your phone to check that the WiFi works and provides internet access
 
-## Choosing how to connect to your Sensorgnome
-
-You have two options for connecting to your Sensorgnome: hotspot and internet. Both have advantages and disadvantages. One works better for some users, others are more successful with the other... Pros and cons:
-
-#### WiFi Hot-Spot
-
-* pro: local, no internet required
-* pro: quicker to be ready than internet
-* con: connecting can be tricky and confusing depending on laptop/phone, for some users it just works for others it never does
-
-#### Internet
-
-* pro: if your RaspberryPi shows 3 flashes it's almost guaranteed to work
-* con: requires internet access for both RaspberryPi and laptop/phone
-* con: currently requires that both the RaspberryPi and laptop/phone are connected to the same local network (i.e., that the RaspberryPi can be accessed directly by the laptop/phone, this doesn't work, for example, if the phone is on cellular and the RaspberryPi on local WiFi)
-
-{% hint style="info" %}
-If you configured your Sensorgnome with internet access you have both options. If one gives you trouble: try the other!!!\
-Also, if you run into issues and the RaspberryPi has internet access then it will upload log files and you can [get help](../#getting-help).
-{% endhint %}
-
-## Connect to your Sensorgnome via Internet
-
-First: verify that your RaspberryPi's green LED shows 3 flashes every 2 seconds.
-
-* If it doesn't your RaspberryPi does not have internet access: use the hotspot method or double-check the internet access (e.g. if using WiFi reflash and triple-check the WiFi settings).
-
-Open the Sensorgnome Hub (SGhub) website at [https://www.sensorgnome.net](https://www.sensorgnome.net) (provisionally, the username and magic word are motus and manygnomes, respectively).
-
-The table at the top shows the most recently initialized Sensorgnomes: yours may already be at the top! You can identify it using the label column which should show the hostname you entered.
-
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
-
-Click on the row with your Sensorgnome, this switches to the station tab; at the top-right is a link to the web UI:<br>
-
-<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
-
-You should see a set-up page for your Sensorgnome to confirm the password, this is needed to set the hot-spot password:\
-![](<../.gitbook/assets/image (18).png>)
-
-After verifying the password the web UI should load, but it may take 20-30 seconds and show "odd transitional" views, please have patience and/or reload your browser tab. (There is room for improvement here!)\
-In the end, you should see the login box into which you have to enter the password you entered into the RaspberryPi Imager:\
-![](<../.gitbook/assets/image (10).png>)
-
-You are now connected to the web UI:\
-![](<../.gitbook/assets/image (6).png>)
-
-## Connect to your Sensorgnome via its WiFi hot-spot
-
-{% hint style="info" %}
-The hot-spot acts as a "captive portal", which means that it looks to your computer/phone like a WiFi network typical of airports or hotels where you have to enter credentials or accept an agreement to get internet access. However, the Sensorgnome never actually provides internet access...
-
-Some of the issues users have encountered are:
-
-* a web browser automatically opens to show the Sensorgnome's web UI, but it may be a special system browser and not your regular browser (on iOS that browser seems not to show certain charts)
-* your computer/phone may become "impatient" about not getting internet access and decide to switch back to your regular WiFi
-* if using Android, your phone may use the cellular network instead of the Hot-Spot and you most likely have to turn cellular/mobile off
-
-In many cases the hot-spot "just works" but being aware of the potential issues helps.
-
-If you get stuck and "it doesn't work" check that your computer/phone is still connected to the hot-spot. You can also connect to the Sensorgnome using your favorite browser at `http://192.168.7.2` to avoid the system browser.
-{% endhint %}
-
-1. Open the WiFi/internet control panel on your computer/phone and connect to a network named something like `SG-1234RPI4ABCD-init` that is _not_ secure/encrypted, i.e. no password.
-2. After connecting, a browser should pop-up showing a Sensorgnome page:
-   * if you _did not_ use the RaspberryPi Imager and set a password there, you will be asked to configure a password
-   * if you _did_ use the RaspberryPi Imager and set a password you will be asked to confirm the password\
-     **Note**: this is currently broken: you will just be redirected to the web UI login and you will be disconnected from the hot-spot 10 seconds after you log in and you will have to reconnect
-3. After submitting the password, you will see a confirmation page after which the hot-spot temporarily turns off and you will thus be disconnected.
-4. You now need to reconnect to the "real" hot-spot which has the same `SG-1234RPI4ABCD` type of id but without trailing -init. This hot-spot is now secured with the password, so you will need to enter it (again...).
-5. A browser should again pop-up and display a simple redirect page that leads you to the web UI's login page.
-
-In the future you will be able to get to the web UI via the hot-spot just using steps 4 & 5. The prior steps are only for the first time to set the hot-spot password.
-
-## Next steps
-
-You now have access to the Sensorgnome web UI. Proceed with the next section to set-up the radios and network connections.
-
-## FAQ
-
-### **How does the hot-spot captive portal work?**
-
-When a device connects to the hot-spot it detects that there is no internet connection (because the hot-spot only provides access to the Sensorgnome). It then assumes that this is a "captive portal", which means that the user has to connect to a specific web site to log in or agree to some legal terms before getting internet access. This is typical of wifi in public locations, e.g. airport, hotel, or coffee shop.
-
-In order to facilitate the required login or acceptance of terms your device starts a web browser which connects to the Sensorgnome's web UI. This usually works well and allows you to use the UI. However, depending on the device and on other available wifi networks you may run into issues. The main cause for issues is that your device expects to eventually get internet access but the Sensorgnome will never provide that, so your device may take actions in an effort to restore internet access. Specifically, your device may decide to disconnect from the Sensorgnome hot-spot and connect to some other network, such as a previously working one.
-
-Tips:
-
-* If your device prompts you with a message stating that this network does not provide internet access and whether you want to stay connected anyway choose the option to stay connected.
-* If the web UI stops working, check whether your device disconnected from the hot-spot and connected to a different network. If so, reconnect to the hot-spot.
-* The web browser used in the captive portal mode (i.e. to allow you to log-in or accept terms) may not be the regular web browser you use on your device. If it does not work well or is closed on you open your standard browser and try `http://192.168.7.2` or `http://sgpi.local`.
-* If the captive portal ends up being broken or too confusing turn it off on the landing page at `http://192.168.7.2`, `http://sgpi.local`. Then possibly disconnect and reconnect to the hot-spot and navigate to one of the those two URLs explicitly by bringing up a browser. Your device operating system will warn about "no interenet access" and some "stay connected anyway" setting may be necessary.
+## Additional information
 
 ### **Why a disk image?**
 
