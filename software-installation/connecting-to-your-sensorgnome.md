@@ -10,13 +10,13 @@ You can use either a laptop of smartphone to connect to a SensorGnome. However, 
 
 By default, a SensorGnome broadcasts a WiFi hotspot whenever it is powered on, assuming it is functioning normally. The WiFi hotspot _only_ serves to establish a connection between the SG and your computer or phone; it does not connect the SG to the internet.&#x20;
 
-#### Step 1: Connect to the SG's hotspot
+### Step 1: Connect to the SG's hotspot
 
 The _**WiFi network name**_ corresponds to the SensorGnome's unique serial number, e.g. `SG-3BEERPI36FDA`. The _**WiFi password**_ is set when the SensorGnome is configured immediately after a fresh software installation. If the SG's WiFi hotspot name ends with a `-init` suffix, it has not been initialized and does not yet have a password.
 
 <figure><img src="../.gitbook/assets/image (31).png" alt=""><figcaption><p>Several SensorGnomes are running and within WiFi range of this location. The last SG, with the <code>-init</code> suffix following the serial number, has not yet been initialized.</p></figcaption></figure>
 
-#### Step 2: Open a web browser and follow the prompts to log in to the network
+### Step 2: Open a web browser and follow the prompts to log in to the network
 
 Once connected to the SG's WiFi hotspot, you will still need to log in to view the web interface. The SG uses what's referred to as a **captive portal** for this, which will be familiar to anyone who has accessed WiFi in an airport or hotel that has required them to log in first. Your browser might automatically open up this page for you, or you may need to click on the "Open browser and connect" option in your WiFi network settings (the appearance of which will vary depending on your computer or phone operating system. Or your browser might display a banner prompting you to log in to the network.
 
@@ -37,7 +37,7 @@ You should now see a webpage with something like the page below. This is the cap
 
 <figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption><p>The captive portal provides two options for accessing the web interface, along with an option to disable the captive portal itself </p></figcaption></figure>
 
-#### Step 3: Enter the credentials **for the web interface**
+### Step 3: Enter the credentials **for the web interface**
 
 Having clicked on either of the two links in the captive portal, you should now see the web interface log in page. The _**username**_ is already prepopulated as `gnome`. The _**password**_ is the same as the WiFi password you just used to connect to the hotspot.&#x20;
 
