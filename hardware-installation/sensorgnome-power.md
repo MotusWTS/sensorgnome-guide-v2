@@ -1,12 +1,12 @@
 ---
 description: >-
-  Providing good power to Sensorgnomes and to the radios can be more challenging
+  Providing good power to SensorGnomes and to the radios can be more challenging
   that it may seem and can result in difficult to troubleshoot issues.
 ---
 
-# Sensorgnome power
+# SensorGnome power
 
-When providing power to a Sensorgnome there are multiple aspects to consider:
+When providing power to a SensorGnome there are multiple aspects to consider:
 
 * Powering the Raspberry Pi, which typically also powers the radios attached via USB.
 * Ensuring that the Raspberry Pi can indeed power everything attached to the USB ports.
@@ -42,7 +42,7 @@ I all cases use a quality cable that is as short as practical: cheap cables with
 Check for "undervoltage condition" in the system log (`/var/log/syslog`)
 {% endhint %}
 
-When a Sensorgnome isn't receiving enough power -- that is, the voltage and/or current is lower than the device is rated for -- it can result in a malfunctioning station that doesn't collect data.&#x20;
+When a SensorGnome isn't receiving enough power -- that is, the voltage and/or current is lower than the device is rated for -- it can result in a malfunctioning station that doesn't collect data.&#x20;
 
 ### Using Power over Ethernet (PoE)
 
@@ -56,9 +56,9 @@ A common alternative that historically predates 802.3af is to use 2 wire pairs f
 
 One catch with non-gigabit splitters (e.g. the 24V set-up) is that if they are used to connect two gigabit devices (switch and rPi) then it is often necessary to force the use of 100Mbps at one of the two ends, i.e. either using the switch web interface (in the case of a managed switch) or `ethtool` on the rPi.
 
-### Underpowered Sensorgnome - how does it occur?
+### Underpowered SensorGnome - how does it occur?
 
-Underpowered Sensorgnomes typically work fine when set-up and it's later that problem crop up. Sometimes they reboot but more often some peripheral malfunctions. Often USB-attached devices restart on their own. In some situations the Sensorgnome just seems "flaky" and a different problem crops up every time.
+Underpowered SensorGnomes typically work fine when set-up and it's later that problem crop up. Sometimes they reboot but more often some peripheral malfunctions. Often USB-attached devices restart on their own. In some situations the SensorGnome just seems "flaky" and a different problem crops up every time.
 
 The easy cases to troubleshoot are due to inadequate components and installation problems because they tend to show up quickly. Check components, have spares to swap-in to verify against, check all connections and connectors.
 
@@ -67,15 +67,15 @@ The troublesome cases are when general wear and tear triggers the problem. This 
 * The connection to the screw terminals on the DC-DC voltage converter is loose
 * Individual copper strands within the USB cable are broken. This can occur from repeated bending of the cable.
 * The microUSB port of the Raspberry Pi is damaged (lifts from the circuit board slightly when force is applied).
-* Due to nightly deep discharges the off-grid battery can no longer reliably power the Sensorgnome through the night.
+* Due to nightly deep discharges the off-grid battery can no longer reliably power the SensorGnome through the night.
 * Due to humidity and heat-cycling connectors become unreliable.
 
-### Identifying an underpowered Sensorgnome
+### Identifying an underpowered SensorGnome
 
 The behaviour of underpowered devices can be inconsistent and hard to diagnose. In some cases, it is not possible to connect to the device because both Ethernet and Wi-Fi are malfunctioning, however it may still appear as though the device is on as the indicator LEDs will be blinking. This can also be due to corrupted data on the SD card or a physical connection problem with the SD card, so it's not always obvious.&#x20;
 
 {% hint style="info" %}
-In our experience, on remote field trips it's always best to have a complete spare Sensorgnome available so that components can be swapped out and tested.&#x20;
+In our experience, on remote field trips it's always best to have a complete spare SensorGnome available so that components can be swapped out and tested.&#x20;
 {% endhint %}
 
 

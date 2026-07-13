@@ -6,7 +6,7 @@
 
 * [Anatomy of a SensorGnome](hardware-installation/anatomy.md)
 * [How to build a SensorGnome](hardware-installation/buildsg.md)
-* [Sensorgnome power](hardware-installation/sensorgnome-power.md)
+* [SensorGnome power](hardware-installation/sensorgnome-power.md)
 * [GPS options](hardware-installation/gps-options.md)
 
 ## Software Installation
@@ -19,7 +19,7 @@
 
 ## Maintenance
 
-* [Checking a Sensorgnome in the field](maintenance/whattobring.md)
+* [Checking a SensorGnome in the field](maintenance/whattobring.md)
 * [Downloading data](maintenance/downloading-data.md)
 * [Uploading a local tag database](maintenance/localtagdb.md)
 * [Software upgrade](maintenance/upgrade-notes.md)
@@ -27,7 +27,7 @@
 
 ## Appendix
 
-* [Sensorgnome security and networking](appendix/sensorgnome-security-and-networking.md)
+* [SensorGnome security and networking](appendix/sensorgnome-security-and-networking.md)
 * [Motus data file formats](appendix/fileformats.md)
 * [Software History and why V2](appendix/software-history-and-why-v2.md)
 * [CTT Motus dongles](appendix/ctt-motus-dongles.md)

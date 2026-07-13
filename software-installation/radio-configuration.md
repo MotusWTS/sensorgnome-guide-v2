@@ -1,6 +1,6 @@
 # Radio Configuration
 
-Once the Sensorgnome operating system is up and running the various radio dongles need to be plugged in, configured, and their proper operation verified.
+Once the SensorGnome operating system is up and running the various radio dongles need to be plugged in, configured, and their proper operation verified.
 
 The configuration consists of mapping each radio to a "port" such that Motus can exactly identify which antenna received a tag transmission.
 
@@ -8,7 +8,7 @@ The verification consists of validating that a test tag transmission is detected
 
 ## Radio port configuration
 
-The purpose of USB port mapping is to establish a clean correspondence between (human-readable) labels on USB ports, port numbers reported to Motus, and the port designations used by the Sensorgnome software.
+The purpose of USB port mapping is to establish a clean correspondence between (human-readable) labels on USB ports, port numbers reported to Motus, and the port designations used by the SensorGnome software.
 
 {% hint style="info" %}
 While establishing the port mapping may seem like a detail it is actually extremely important because it is the most critical link in communicating antenna orientation to Motus. When detection data is evaluated, the antenna information is often used to determine animal travel direction. If antennas, radios or ports are misidentified the result is bad science!
@@ -16,13 +16,13 @@ While establishing the port mapping may seem like a detail it is actually extrem
 
 ### Background
 
-Motus identifies ports using single digit integers from P1 through P9 and P0 (which stands for 10). It is recommended to physically label the ports on a Sensorgnome in the same way from 1 through 10 (e.g. using marker pen, sticky labels, etc).
+Motus identifies ports using single digit integers from P1 through P9 and P0 (which stands for 10). It is recommended to physically label the ports on a SensorGnome in the same way from 1 through 10 (e.g. using marker pen, sticky labels, etc).
 
 The Operating System uses an entirely different port numbering, which consists of the _path_ through ports and hubs to reach a device. For example, a radio plugged into port 3 of a hub, itself plugged into port 4 of an rPi ends up with the path `1.4.3` (the leading 1 refers to the first root hub). We need to establish a mapping from these paths to port numbers 1..10.
 
 The Motus conventions for the ports depend on the device:
 
-* **rPi3B:** port 1 is the upper port next to the Ethernet jack, port 2 is below, 3 is the upper outer port, and 4 is the lower outer port. Typically a Sensorgnome uses a USB hub plugged into port 4 (bottom outer port) and the hub's ports are numbered 4 through 7 or 4 through 10 depending on whether it's a 4-port or a 7-port hub.
+* **rPi3B:** port 1 is the upper port next to the Ethernet jack, port 2 is below, 3 is the upper outer port, and 4 is the lower outer port. Typically a SensorGnome uses a USB hub plugged into port 4 (bottom outer port) and the hub's ports are numbered 4 through 7 or 4 through 10 depending on whether it's a 4-port or a 7-port hub.
 * **rPi4B:** the numbering should be reversed so the USB hub is plugged into a USB3 port (the blue ports): port 1 is the lower outer port, port 2 above it, port 3 the lower port next to the ethernet jack, and port 4 above it. Plug a hub into this last port, i.e. top blue USB3 port.
 * **rPi Zero-2W:** there is only one micro-USB port and the port numbering will depend on the type of hub used.
 * **SensorStation V1:** the built-in CTT radios at the bottom of the board are ports 1-5, the USB connectors labeled USB1 through USB5 are ports 6-10, USB6 & USB7 should not be used for radios (plug the WiFi dongle into one of them and a cellular modem into the other).
@@ -32,7 +32,7 @@ The Motus conventions for the ports depend on the device:
 To perform the mapping follow these steps:
 
 * Ensure all USB ports are labeled and all devices to be plugged in are also labeled.
-* Bring up the Sensorgnome's web UI and locate the "Port Mapping" section on the Radios tab.
+* Bring up the SensorGnome's web UI and locate the "Port Mapping" section on the Radios tab.
 * Unplug all USB devices (leaving any hub plugged in).
 * Plug one device into the desired port,
 * Watch the device appearing in the Web UI's "Devices" widget, note the port path shown as well as the port selected. If it's not red, then it's probably OK.
@@ -99,7 +99,7 @@ To verify the correct end-to-end operation of radios some test tags are necessar
 
 ## Troubleshooting
 
-* As you plug radios into USB ports they should appear in the Web UI Devices section within 2-3 seconds. If they don't, reboot the Sensorgnome. If that doesn't make them show up there is a software or hardware problem. Compare with what happens as you plug/unplug other identical devices if you have any.
+* As you plug radios into USB ports they should appear in the Web UI Devices section within 2-3 seconds. If they don't, reboot the SensorGnome. If that doesn't make them show up there is a software or hardware problem. Compare with what happens as you plug/unplug other identical devices if you have any.
 * ~~If a FUNcube is shown in the Devices section with a frequency other than the expected one (166.376 for north America) press the "Refresh Devices List" button. If that doesn't fix it _TBD_~~
-* If the Devices look correct but the Live Pulses do not show anything first ensure your test tag is active. Some test tag intervals are long, e.g. 25 seconds, so have some patience. If nothing happens, reboot the Sensorgnome.
+* If the Devices look correct but the Live Pulses do not show anything first ensure your test tag is active. Some test tag intervals are long, e.g. 25 seconds, so have some patience. If nothing happens, reboot the SensorGnome.
 * If you see pulses but no tag detections re-upload your tag database and reboot.

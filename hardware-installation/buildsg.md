@@ -1,7 +1,7 @@
 # How to build a SensorGnome
 
 {% hint style="warning" %}
-This page has not yet been updated for the Sensorgnome V2 software!
+This page has not yet been updated for the SensorGnome V2 software!
 {% endhint %}
 
 

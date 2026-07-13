@@ -23,7 +23,7 @@ The SensorGnome has no way of knowing if a download actually succeeded and will 
 The process of collecting the files to be downloaded into a ZIP archive can take a long time and your browser may feel like it's unresponsive for several seconds or minutes.
 {% endhint %}
 
-The downloaded ZIP files can and should be uploaded as-is to Motus using the Motus web site. If the Sensorgnome uploads directly then manual uploads are redundant but not harmful.
+The downloaded ZIP files can and should be uploaded as-is to Motus using the Motus web site. If the SensorGnome uploads directly then manual uploads are redundant but not harmful.
 
 #### Using an FTP client&#x20;
 

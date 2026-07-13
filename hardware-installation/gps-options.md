@@ -1,35 +1,35 @@
 ---
 description: >-
-  Sensorgnomes support the Adafruit GPS HAT, cell modem GPSs, and discrete GPS
+  SensorGnomes support the Adafruit GPS HAT, cell modem GPSs, and discrete GPS
   units.
 ---
 
 # GPS options
 
-The Sensorgnome is best equipped with a GPS although this is not a hard requirement. The GPS performs two functions:
+The SensorGnome is best equipped with a GPS although this is not a hard requirement. The GPS performs two functions:
 
 * it provides accurate time to timestamp tag detections
 * it provides accurate station location even if the SG is relocated and no-one updates the metadata manually (common...)
 
-If no GPS unit is present the Sensorgnome can obtain the time from the network using NTP (network time protocol). This assumes an always-on internet connection. If neither GPS nor NTP are available the date\&time will be completely unusable at the first reboot as the Raspberry Pi hardware does not have any real-time clock.
+If no GPS unit is present the SensorGnome can obtain the time from the network using NTP (network time protocol). This assumes an always-on internet connection. If neither GPS nor NTP are available the date\&time will be completely unusable at the first reboot as the Raspberry Pi hardware does not have any real-time clock.
 
 ## Cell modem GPS
 
-If the Sensorgnome is equipped with a cell modem then in the vast majority of cases it uses the generally built-in GPS unit. This does require connecting a GPS antenna to the cell modem and ensuring it has good sky view (and is not inside of a metal enclosure).
+If the SensorGnome is equipped with a cell modem then in the vast majority of cases it uses the generally built-in GPS unit. This does require connecting a GPS antenna to the cell modem and ensuring it has good sky view (and is not inside of a metal enclosure).
 
-If the Sensorgnome does not detect the GPS (check the Web UI overview tab) please post on the forum (ensure the SG is connected to the internet so it can upload log files).
+If the SensorGnome does not detect the GPS (check the Web UI overview tab) please post on the forum (ensure the SG is connected to the internet so it can upload log files).
 
-If the Sensorgnome detects the GPS unit but does not get a fix the problem most likely is the antenna or its placement. Note that some GPS units require an "active" antenna which has an amplifier (LNA) built-in and some don't.
+If the SensorGnome detects the GPS unit but does not get a fix the problem most likely is the antenna or its placement. Note that some GPS units require an "active" antenna which has an amplifier (LNA) built-in and some don't.
 
 ## Adafruit GPS HAT
 
 The hardware installation of the Adafruit GPS should be documented in the "How to build a Sensorgtnome" section (which is empty at the moment).
 
-From the point of view of making the GPS work: the GPS HAT contains a small eeprom chip that identifies the HAT to the operating system and the Sensorgnome software sets everything up automatically. Note that stacking two HATs is not supported by the rPi as it breaks the HAT detection.
+From the point of view of making the GPS work: the GPS HAT contains a small eeprom chip that identifies the HAT to the operating system and the SensorGnome software sets everything up automatically. Note that stacking two HATs is not supported by the rPi as it breaks the HAT detection.
 
 ## Discrete GPS unit
 
-It is possible to connect a "generic" GPS breakout board to the Sensorgnome. Please purchase from a reputable seller as many "U-Blox" GPS breakouts are fake and contain knock-off devices. A (genuine) U-Blox GPS is a good choice because it supports a fast binary protocol which gives good time synchronization without PPS (pulse per second) signal.
+It is possible to connect a "generic" GPS breakout board to the SensorGnome. Please purchase from a reputable seller as many "U-Blox" GPS breakouts are fake and contain knock-off devices. A (genuine) U-Blox GPS is a good choice because it supports a fast binary protocol which gives good time synchronization without PPS (pulse per second) signal.
 
 You can connect a GPS either via USB or serial. Connecting via USB is recommended and "it should just work", although if the web UI shows "no-dev" 5 minutes after boot then post for help on the forum. (It does sometimes take a couple of _minutes_ for gpsd to detect and configure the GPS device and then the Web UI to figure that out, use `gpsmon` on the commandline to get quicker feedback.)
 
@@ -42,7 +42,7 @@ sudo tee /etc/sensorgnome/force-hat <<<"Ultimate GPS HAT"
 sudo reboot
 ```
 
-To troubleshoot the GPS log in via SSH and run `gpsmon`, if you just get a couple of lines then gpsd (the GPS management daemon) is not talking to the GPS. Double-check your connections (especially RX-TX cross-over), ensure the Sensorgnome is connected to the internet so it can upload its log files and contact the sensorgnomads mailing list with the ID of your Sensorgnome. If gpsmon shows lots of GPS info that updates every second or two then your GPS is working fine.
+To troubleshoot the GPS log in via SSH and run `gpsmon`, if you just get a couple of lines then gpsd (the GPS management daemon) is not talking to the GPS. Double-check your connections (especially RX-TX cross-over), ensure the SensorGnome is connected to the internet so it can upload its log files and contact the sensorgnomads mailing list with the ID of your SensorGnome. If gpsmon shows lots of GPS info that updates every second or two then your GPS is working fine.
 
 Another troubleshooting avenue is `/var/log/syslog`: restart gpsd (`sudo systemctl restart gpsd`) and look at what it prints in `/var/log/syslog`. It goes through a number of devices, including `/dev/ttyUSB0` and `/dev/serial0`. If you see an error for the device your GPS is using that may provide clues about what is going wrong.
 

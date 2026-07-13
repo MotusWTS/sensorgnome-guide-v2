@@ -2,7 +2,7 @@
 
 ## Cell modem power
 
-Almost all cell modems compatible with Sensorgnomes use a lot of peak power and they exceed the power capabilities of rPi 3B and 4B USB ports. You _must:_
+Almost all cell modems compatible with SensorGnomes use a lot of peak power and they exceed the power capabilities of rPi 3B and 4B USB ports. You _must:_
 
 * use a cell HAT or a USB cell modem plugged into a powered USB hub, never attempt to power the cell modem from the rPi's USB ports (a cell HAT needs to be plugged into USB for data, it doesn't receive power through the cable, however)
 * use a 20W power adapter (a good 15W may work)
@@ -16,7 +16,7 @@ If you use a cell HAT it is easy to overlook that it came with a short USB cable
 
 ### Resetting the cell modem
 
-You can reset all the software on the Sensorgnome by rebooting, however, this has only a minor impact on the cell modem. It can help if there are errors at the USB level in communicating with the cell modem. The only way to fully reset a cell modem is to power cycle it, which in the case of a HAT means power cycling the rPi.
+You can reset all the software on the SensorGnome by rebooting, however, this has only a minor impact on the cell modem. It can help if there are errors at the USB level in communicating with the cell modem. The only way to fully reset a cell modem is to power cycle it, which in the case of a HAT means power cycling the rPi.
 
 ## SIM-o-rama
 
@@ -24,23 +24,23 @@ Most problems occur when starting cell service, i.e., placing a fresh SIM card i
 
 ### Why initiating cell service can be very slow
 
-* Many SIMs sold for Sensorgnome type of usage work globally or continent-wide across many providers and many frequencies. This is a large space for the modem to scan and attempt to get service, either from "native" networks or via roaming.
-* The cell modems used for Sensorgnomes and the software are not as sophisticated as cell phones. Things take more time.
+* Many SIMs sold for SensorGnome type of usage work globally or continent-wide across many providers and many frequencies. This is a large space for the modem to scan and attempt to get service, either from "native" networks or via roaming.
+* The cell modems used for SensorGnomes and the software are not as sophisticated as cell phones. Things take more time.
 * The "Super SIM" made by Twilio (and resold by SixFab among others) has multiple personalities used for different regions of the world. It switches personality after failing to connect for a number of minutes. You may be waiting for it to fail using the AsiaPac personality, then the China personality, then the South America personality, then...
 
 ### Try your cell phone's SIM!
 
-If your cell phone uses a physical SIM (as opposed to an eSIM) and your Sensorgnome cell modem is in a enabled-searching-registering endless loop (i.e. doesn't manage to connect) you can try your cell phone's SIM in the Sensorgnome. You probably need one of those cut-out SIM size adapters because your phone most likely uses the nano size while the modem uses the micro size. If your phone's SIM provides service you know that the SIM or it's service is the issue (or the carriers it has access to don't cover your spot).
+If your cell phone uses a physical SIM (as opposed to an eSIM) and your SensorGnome cell modem is in a enabled-searching-registering endless loop (i.e. doesn't manage to connect) you can try your cell phone's SIM in the SensorGnome. You probably need one of those cut-out SIM size adapters because your phone most likely uses the nano size while the modem uses the micro size. If your phone's SIM provides service you know that the SIM or it's service is the issue (or the carriers it has access to don't cover your spot).
 
 Note that in the US the phone SIM may not work or only work briefly if it uses the Verizon network 'cause of "approved devices" nonsense. AT\&T may have some such issues too.
 
 ### SIM activation
 
-You did activate your SIM, right? Most SIMs used for data-only service as typically used in Sensorgnomes have some form of activation performed on some web site.
+You did activate your SIM, right? Most SIMs used for data-only service as typically used in SensorGnomes have some form of activation performed on some web site.
 
-## What the Sensorgnome software does
+## What the SensorGnome software does
 
-The Sensorgnome software does not interact with the cell modem a whole lot. The `sg-control` service, which is the main data processor and also provides the web-ui, primarily queries the ModemManager every few seconds to update the state of the cell modem in the web ui.
+The SensorGnome software does not interact with the cell modem a whole lot. The `sg-control` service, which is the main data processor and also provides the web-ui, primarily queries the ModemManager every few seconds to update the state of the cell modem in the web ui.
 
 A `check-modem` service also checks on the modem state and if it is not connected asks it to connect every few minutes. It tries to balance the need to let the modem "do its thing" trying to find a cell provider vs. ensuring that the cell modem doesn't give up and just sits there idle. Unfortunately there is no status indication for when it's still trying vs. has given up.
 
@@ -48,17 +48,17 @@ Once the cell modem connects everything happens automagically through a set of s
 
 ## What to look for in the Web UI
 
-The Web UI has fairly simple info about the cellular connection. It does not allow any actions to be taken. The reason is that there isn't much that can be done without a lot of information and knowledge. Cell modems are very complex (they run a full Linux operating system) and do their thing on their own. For the Sensorgnome use-case they either work, or take time to work, or don't work and when they don't work it's very difficult to figure out where the problem lies.
+The Web UI has fairly simple info about the cellular connection. It does not allow any actions to be taken. The reason is that there isn't much that can be done without a lot of information and knowledge. Cell modems are very complex (they run a full Linux operating system) and do their thing on their own. For the SensorGnome use-case they either work, or take time to work, or don't work and when they don't work it's very difficult to figure out where the problem lies.
 
 ### Cellular Panel
 
-The Sensorgnome Web UI's network tab has a panel for cellular connections:
+The SensorGnome Web UI's network tab has a panel for cellular connections:
 
-<figure><img src="../.gitbook/assets/image (27).png" alt="" width="445"><figcaption><p>Cellular panel on the network tab of the Sensorgnome Web UI</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27).png" alt="" width="445"><figcaption><p>Cellular panel on the network tab of the SensorGnome Web UI</p></figcaption></figure>
 
 This screen shot shows a modem that is successfully connected. The first item to look at is that state: the (i) brings up a brief explanation of common states. If the modem doesn't connect it often says "enabled" but then cycles through "registering" or "searching" over the course of a minute or two.
 
-When connected ensure that the Sensorgnome got an IP address:
+When connected ensure that the SensorGnome got an IP address:
 
 <figure><img src="../.gitbook/assets/image (28).png" alt="" width="296"><figcaption></figcaption></figure>
 
@@ -168,7 +168,7 @@ PING 1.1.1.1 (1.1.1.1) from 100.64.0.2 wwan0: 56(84) bytes of data.
 
 ### Checking the cell phone's GPS
 
-The GPS in most cell modems has to be explicitly activated. This is something done at boot time by a Sensorgnome script, which also finds out which USB serial device corresponds to the GPS and then allows gpsd, the GPS daemon, to listen to it.
+The GPS in most cell modems has to be explicitly activated. This is something done at boot time by a SensorGnome script, which also finds out which USB serial device corresponds to the GPS and then allows gpsd, the GPS daemon, to listen to it.
 
 Warning: due to a mis-feature in ModemManager it is not possible to activate the cell phone's GPS if no SIM is present in the cell modem. A cell connection is not required but a SIM is.
 

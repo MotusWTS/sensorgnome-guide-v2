@@ -1,25 +1,25 @@
 ---
-description: Notes on upgrading Sensorgnomes
+description: Notes on upgrading SensorGnomes
 ---
 
 # Software upgrade
 
-In order to upgrade a Sensorgnome an Internet connection is required as the Sensorgnome pulls packages from a server on the Internet. Some thoughts about upgrades:
+In order to upgrade a SensorGnome an Internet connection is required as the SensorGnome pulls packages from a server on the Internet. Some thoughts about upgrades:
 
 * if it ain't broke, don't fix it
-* the standard upgrade process only updates Sensorgnome software, almost all system software is left unchanged, this avoids ending up with a completely non-functional system due to a problem during the upgrade
+* the standard upgrade process only updates SensorGnome software, almost all system software is left unchanged, this avoids ending up with a completely non-functional system due to a problem during the upgrade
 * it is possible to perform a full system upgrade, but perhaps swapping in an SD-card with a fresh clean image is a better option, in any case, unless there is a specific problem this is supposed to fix see the first bullet point...
 * If updating with a fresh image, be sure to [update the boot number](upgrade-notes.md#updating-the-boot-number) to maintain the proper sequence.
 
 ## Upgrade Process
 
-The upgrade process is managed using the SG Web UI's software tab shown below. The functionality first needs to be enabled with the `enable buttons` toggle. The next step is to run a software update check (red `check` button). In the situation shown one Sensorgnome package can be updated and many operating system packages. The red `sg upgrade` button starts the upgrade of just the Sensorgnome packages, which is the recommended action. Upgrading all the OS packages can have unintended issues.
+The upgrade process is managed using the SG Web UI's software tab shown below. The functionality first needs to be enabled with the `enable buttons` toggle. The next step is to run a software update check (red `check` button). In the situation shown one SensorGnome package can be updated and many operating system packages. The red `sg upgrade` button starts the upgrade of just the SensorGnome packages, which is the recommended action. Upgrading all the OS packages can have unintended issues.
 
 <figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 ## Upgrading from V2.0-RC12 or prior to later versions
 
-Due to the expiration of the software repository signing key manual intervention is required in order to upgrade from V2.0-RC12 or prior (version 2023-XXX on the software tab) to the latest versions. In order to update the repository key the following command must be executed on the Sensorgnome (i.e. SSH to the Sensorgnome):
+Due to the expiration of the software repository signing key manual intervention is required in order to upgrade from V2.0-RC12 or prior (version 2023-XXX on the software tab) to the latest versions. In order to update the repository key the following command must be executed on the SensorGnome (i.e. SSH to the SensorGnome):
 
 `sudo curl -L -o /etc/apt/trusted.gpg.d/sensorgnome.gpg` [`https://sensorgnome.s3.amazonaws.com/sensorgnome.gpg`](https://sensorgnome.s3.amazonaws.com/sensorgnome.gpg)
 
@@ -40,7 +40,7 @@ This upgrade requires patience because the code in those versions could not deal
 3.  Run "sg-upgrade" and monitor the log (or get a tea/coffee for 2-3 minutes), after a couple of minutes the log will seem to be done (scroll down in the widget), showing:<br>
 
     <figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
-4.  Wait another minute and you may notice the green LED on the rPi stop blinking for a bit as it reboots, then reload your browser tab (you may have to reconnect to the hot-spot if you're using that to access the Sensorgnome), you should see a prompt to verify the SG password, if not, wait another minute and reload the browser tab again:<br>
+4.  Wait another minute and you may notice the green LED on the rPi stop blinking for a bit as it reboots, then reload your browser tab (you may have to reconnect to the hot-spot if you're using that to access the SensorGnome), you should see a prompt to verify the SG password, if not, wait another minute and reload the browser tab again:<br>
 
     <figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 5.  After entering the password the web UI should load, however, it may take a while (20-30 secs) and you may have to reconnect to the hot-spot again (sorry). On the software tab confirm that you are now running version 2023-115 or later<br>

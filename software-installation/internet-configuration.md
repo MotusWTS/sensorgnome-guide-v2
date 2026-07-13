@@ -49,14 +49,14 @@ If you are experiencing issues with cell connectivity, please refer to the [Trou
 
 ## Automatic upload process
 
-When the Sensorgnome connects to a WiFi, Ethernet, or cellular network it expects to obtain an IP address for itself and the address of a default gateway via DHCP. This is standard DHCP configuration but of course can be disabled/changed by the administrator of the local network.
+When the SensorGnome connects to a WiFi, Ethernet, or cellular network it expects to obtain an IP address for itself and the address of a default gateway via DHCP. This is standard DHCP configuration but of course can be disabled/changed by the administrator of the local network.
 
-Whenever the Sensorgnome has a default gateway it:
+Whenever the SensorGnome has a default gateway it:
 
 * displays "internet via xxx" in the "internet via" widget on the network tab, where xxx designates the type of interface
 * checks general internet connectivity and displays the result in the "Internet"  widget
 * checks connectivity to motus.org and displays the result in the "Motus.org" widget
-* obtains an upload authentication token from a Sensorgnome server
+* obtains an upload authentication token from a SensorGnome server
 * uploads data files to motus.org as soon as they are complete, i.e., the next file is started, which typically. happens once an hour
 * uploads any old data files that have not been previously uploaded
 
