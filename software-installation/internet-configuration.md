@@ -8,7 +8,7 @@ Wherever possible, SG's should be connected to the Internet for three benefits:
 
 ## Option 1: Wired internet over Ethernet
 
-The simplest method of syncing data over the internet is to plug the RPi into the Internet via an Ethernet cable. If the internet is not password-protected and the SG can obtain an address via DHCP the SensorGnome should connect to the Motus server within minutes and begin syncing data.&#x20;
+The simplest method of syncing data over the internet is to plug the RPi into the Internet via an Ethernet cable. If the internet is not password-protected and the SG can obtain an address via DHCP the SensorGnome should connect to the Motus server within minutes and begin syncing data.
 
 ### Steps:
 
@@ -26,7 +26,7 @@ The RPi3 only supports the 2.4Ghz band, not the 5Ghz band. The RPi4 supports bot
 ### **Steps:**
 
 1. Connect to the SensorGnome's web UI using its WiFi hotspot. (See [here](connecting-to-your-sensorgnome.md#option-1-connect-via-wifi-hotspot) for instructions)
-2. On the `NETWORK` tab, click on the "pencil" icon in the WiFi Client widget to edit the configuration&#x20;
+2. On the `NETWORK` tab, click on the "pencil" icon in the WiFi Client widget to edit the configuration
 
 <figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
 
@@ -45,7 +45,15 @@ Cellular connectivity is supported using the[ SixFab 4G/LTE cellular modem kit/H
 
 Simply installing the HAT or plugging the SIM7600 device in _should_ cause everything to magically function, provided the SIM you are using is activated and has a valid data plan. The SixFab modem kit has an integrated GPS, though in the case of the Waveshare device you'll need to purchase a simple (passive) GPS antenna with a u.Fl connector and plug it into the GPS port (you have to open the device as shown in the instructions provided by Waveshare).
 
+<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+
 If you are experiencing issues with cell connectivity, please refer to the [Troubleshooting ](cell-modem-troubleshooting.md)section.
+
+## SG Hub
+
+SG Hub, at [**www.sensorgnome.net**](https://www.sensorgnome.net/), provides a convenient way to check on an internet-connected SensorGnome.
+
+<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption><p>SG Hub will show recently connected SG</p></figcaption></figure>
 
 ## Automatic upload process
 
@@ -54,12 +62,8 @@ When the SensorGnome connects to a WiFi, Ethernet, or cellular network it expect
 Whenever the SensorGnome has a default gateway it:
 
 * displays "internet via xxx" in the "internet via" widget on the network tab, where xxx designates the type of interface
-* checks general internet connectivity and displays the result in the "Internet"  widget
+* checks general internet connectivity and displays the result in the "Internet" widget
 * checks connectivity to motus.org and displays the result in the "Motus.org" widget
 * obtains an upload authentication token from a SensorGnome server
 * uploads data files to motus.org as soon as they are complete, i.e., the next file is started, which typically. happens once an hour
 * uploads any old data files that have not been previously uploaded
-
-## SG Hub
-
-<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption><p>SG Hub will show recently connected SG</p></figcaption></figure>
