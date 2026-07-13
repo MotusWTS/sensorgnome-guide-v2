@@ -63,25 +63,3 @@ Whenever the Sensorgnome has a default gateway it:
 ## SG Hub
 
 <figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption><p>SG Hub will show recently connected SG</p></figcaption></figure>
-
-### Known issue: authentication
-
-Authentication with motus.org is necessary to perform the uploads and the exact mechanism is still in flux. Currently three mechanisms are supported, they all "get the data to where it needs to go" but have issues. Motus server back-end functionality needs to be enhanced to remove these issues.
-
-Note: option 1 is recommended, although you may want to implement option 2. Option 3 was coded first in the Sensorgnome software and remains available until final resolution of the authentication mechanism.
-
-#### Option 1: automatic token
-
-If you do nothing, the SG obtains a token from a Sensorgnome server and uploads data as user `sg-uploader` into Motus project 460. You will not be able to see the upload jobs in your project but you can verify that they occur by looking at the receiver. (Details TBD.)
-
-#### Option 2: give sg-uploader access to your project
-
-If you start with option 1 you can, at any time, add the `sg-uploader` user to your project and give it "update" access only to "data", all other permissions can be none:
-
-![](<../.gitbook/assets/image (12).png>)
-
-The result of this is that the upload jobs will be part of your project and can be seen like any manual data uploads.
-
-#### Option 3: enter your Motus creds
-
-You can also enter your Motus login credentials into the SG web UI on the files tab. This causes the SG to obtain an authentication token directly from motus.org and use that to upload files. Your login user/password are not stored anywhere, only the token is. The token is periodically refreshed and remains valid for 45 days if the SG cannot connect to the internet for such a refresh. If it times out, the SG reverts to option 1 until Motus credentials are again entered.
