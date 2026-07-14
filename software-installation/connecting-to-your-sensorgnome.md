@@ -8,11 +8,11 @@ You can use either a laptop of smartphone to connect to a SensorGnome. However, 
 
 ## Option 1: Connect via WiFi hotspot
 
-By default, a SensorGnome broadcasts a WiFi hotspot whenever it is powered on, assuming it is functioning normally. The WiFi hotspot _only_ serves to establish a connection between the SG and your computer or phone; it does not connect the SG to the internet.&#x20;
+By default, a SensorGnome broadcasts a WiFi hotspot whenever it is powered on, assuming it is functioning normally. The WiFi hotspot _only_ serves to establish a connection between the SG and your computer or phone; it does not connect the SG to the internet.
 
 ### Step 1: Connect to the SG's hotspot
 
-The _**WiFi network name**_ corresponds to the SensorGnome's unique serial number, e.g. `SG-3BEERPI36FDA`. The _**WiFi password**_ is set when the SensorGnome is configured immediately after a fresh software installation. If the SG's WiFi hotspot name ends with a `-init` suffix, it has not been initialized and does not yet have a password.
+The _**WiFi network name**_ corresponds to the SensorGnome's unique serial number, e.g. `SG-3BEERPI36FDA`. The _**WiFi password**_ is set when the SensorGnome is configured immediately after a fresh software installation. If the SG's WiFi hotspot name ends with a `-init` suffix, it has not been [initialized](initial-software-installation.md#initial-configuration) and does not yet have a password.
 
 <figure><img src="../.gitbook/assets/image (31).png" alt=""><figcaption><p>Several SensorGnomes are running and within WiFi range of this location. The last SG, with the <code>-init</code> suffix following the serial number, has not yet been initialized.</p></figcaption></figure>
 
@@ -24,7 +24,7 @@ Once connected to the SG's WiFi hotspot, you will still need to log in to view t
 
 <figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption><p>Your browser may display a prompt like this to direct you to the captive portal</p></figcaption></figure>
 
-If you _don't_ see any prompt or message directing you to the captive portal, you may need to visit it directly. You can access it at either of the links below.&#x20;
+If you _don't_ see any prompt or message directing you to the captive portal, you may need to visit it directly. You can access it at either of the links below.
 
 * [**`http://192.168.7.2`**](http://192.168.7.2/)
 * [**`http://sgpi.local`**](http://sgpi.local/)
@@ -35,11 +35,11 @@ Bookmark these links in your web browser so that you can easily navigate to them
 
 You should now see a webpage with something like the page below. This is the captive portal, and is directing you to the _actual_ web interface page. **Click on either of the two links.**
 
-<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption><p>The captive portal provides two options for accessing the web interface, along with an option to disable the captive portal itself </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption><p>The captive portal provides two options for accessing the web interface, along with an option to disable the captive portal itself</p></figcaption></figure>
 
 ### Step 3: Enter the credentials **for the web interface**
 
-Having clicked on either of the two links in the captive portal, you should now see the web interface log in page. The _**username**_ is already prepopulated as `gnome`. The _**password**_ is the same as the WiFi password you just used to connect to the hotspot.&#x20;
+Having clicked on either of the two links in the captive portal, you should now see the web interface log in page. The _**username**_ is already prepopulated as `gnome`. The _**password**_ is the same as the WiFi password you just used to connect to the hotspot.
 
 <figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption><p>SG login dialog. The username is always gnome, and the password is the same as the WiFi hotspot password.</p></figcaption></figure>
 
@@ -72,11 +72,11 @@ Tips:
 * Ensure you have no VPN active
 * The web browser used in the captive portal mode (i.e. to allow you to log-in or accept terms) may not be the regular web browser you use on your device. If it does not work well or is closed on you open your standard browser and try `http://192.168.7.2` or `http://sgpi.local`.
 * If the captive portal ends up being broken or too confusing turn it off on the landing page at `http://192.168.7.2`, `http://sgpi.local`. Then possibly disconnect and reconnect to the hot-spot and navigate to one of the those two URLs explicitly by bringing up a browser. Your device operating system will warn about "no internet access" and some "stay connected anyway" setting may be necessary.
-* If your laptop is struggling to connect to the WiFi hotspot, try a smartphone; or vice versa.&#x20;
+* If your laptop is struggling to connect to the WiFi hotspot, try a smartphone; or vice versa.
 
 ## Option 2: Connect to your SensorGnome via Internet
 
-If your SensorGnome and your laptop/phone are both connected to the internet AND on the same WiFi or Ethernet network, you can connect to it this way. This can be helpful in cases where the WiFi hotspot method described above is not working.&#x20;
+If your SensorGnome and your laptop/phone are both connected to the internet AND on the same WiFi or Ethernet network, you can connect to it this way. This can be helpful in cases where the WiFi hotspot method described above is not working.
 
 1. First: verify that your SG's green LED shows 3 flashes every 2 seconds. If it doesn't, your RPi SG does not have internet access.
 2. Open the SensorGnome Hub (SGhub) website at [https://www.sensorgnome.net](https://www.sensorgnome.net), logging in with your Motus user name and password when prompted.
@@ -88,7 +88,7 @@ If your SensorGnome and your laptop/phone are both connected to the internet AND
 
 <figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
-5. If you have already configured your SG with a password, enter it when prompted. If this SG has not yet been initialized, you'll have the opportunity to set its password here.&#x20;
+5. If you have already configured your SG with a password, enter it when prompted. If this SG has not yet been initialized, you'll have the opportunity to set its password here.
 
 <figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 

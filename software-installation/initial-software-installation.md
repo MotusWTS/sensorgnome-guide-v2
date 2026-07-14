@@ -38,7 +38,7 @@ The process of flashing the MicroSD card is the same if you are installing the S
 
 #### Troubleshooting
 
-Usually the flashing process is straightforward, but if you have issues or the verification fails, you can try the following
+Usually the flashing process is straightforward, but if you have issues or the verification fails, you can try the following:
 
 * Try again with no changes. Sometimes this works if, for instance, the MicroSD card reader was jostled while the process was running
 * Try a different USB port, or a different laptop if you have one
