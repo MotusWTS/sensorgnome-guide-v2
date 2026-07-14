@@ -29,9 +29,7 @@ Once connected to the SG's WiFi hotspot, you will still need to log in to view t
 <figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption><p>Your browser may display a prompt like this to direct you to the captive portal</p></figcaption></figure>
 
 If you _don't_ see any prompt or message directing you to the captive portal, you may need to visit it directly. You can access it at either of the links below.
-{% endstep %}
 
-{% step %}
 * [**`http://192.168.7.2`**](http://192.168.7.2/)
 * [**`http://sgpi.local`**](http://sgpi.local/)
 
