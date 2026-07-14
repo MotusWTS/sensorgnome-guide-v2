@@ -1,40 +1,76 @@
 # Software installation
 
-The SensorGnome software runs off a MicroSD card. In order to install the software, it is "flashed" to the SD card using an imaging software such as Raspberry Pi Imager. After it is booted for the first time, it needs to be "initialized" by setting a password.
+The SensorGnome software runs off a MicroSD card. In order to install the software, it is "flashed" to the SD card using an imaging software such as Raspberry Pi Imager. After it is booted for the first time, it needs to be "initialized" by setting a password. The basic sequence is:
+
+* Flashing the MicroSD card with the SensorGnome software
+* Initial configuration, where you boot up the SG and set a password&#x20;
+* Connect to the SG and access its web interface, where you can confirm that it's running and configured properly. This last step is described in the [next page](connecting-to-your-sensorgnome.md) since it's an important step _whenever_ you visit a station with a SensorGnome, and not just after the software installation.
 
 ## Prerequisites
 
 * MicroSD card with at least 16 GB. Try to avoid low quality or old SD cards, and instead spend a bit more money (\~$20) to buy a high quality card such as SanDisk Extreme Pro or Samsung Pro/High Endurance as these will reduce the likelihood of data loss or corruption.
 * A computer **AND** a method of reading and writing to a MicroSD card. Most computers do not have MicroSD slots, so a USB adapter is usually the best option.
-* The latest **SensorGnome software** release downloaded from [https://www.sensorgnome.net/download](https://www.sensorgnome.net/download)
-* **Raspberry Pi Imager** installed on your computer, the latest version can be downloaded from [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/). Other imaging software such as WinDiskImager, Balena Etcher, work as well.
+* The latest **SensorGnome software** release downloaded from [https://www.sensorgnome.net/download](https://www.sensorgnome.net/download). As of 2026-07-14 the latest&#x20;
+* **Raspberry Pi Imager** installed on your computer, the latest version can be downloaded from [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/). Other imaging software, such as WinDiskImager or Balena Etcher, work as well.
 * **Raspberry Pi** 4B, 3B+, 3B, Zero-2W, or SensorStation V1.
 
 ## Flashing the MicroSD card
 
 The process of flashing the MicroSD card is the same if you are installing the SG software for the very first time, or if you are upgrading an existing SG with a _fresh software card_ (as opposed to upgrading over the Internet).
 
-### Steps
+{% stepper %}
+{% step %}
+### Launch Raspberry Pi Imager
 
-1. Launch Raspberry Pi Imager. Download from [here](https://www.raspberrypi.com/software/) if you don't yet have it.
-2. Select the `OS` tab, then scroll down to the bottom on the right hand side to select `Use custom`
+Download from [here](https://www.raspberrypi.com/software/) if you don't yet have it.
+{% endstep %}
+
+{% step %}
+### Select `Use custom` on the right hand side of the `OS` tab
+
+Select `Use custom` and click `NEXT` to allow you to load the SG software &#x20;
 
 <figure><img src="../.gitbook/assets/image (39).png" alt="" width="509"><figcaption></figcaption></figure>
+{% endstep %}
 
-3. Browse to where you saved the SensorGnome software on your computer, select the file, then click `NEXT`. You do not need to extract the `.zip` file prior to selecting it. Download the latest SG software from [here](https://www.sensorgnome.net/download) if you don't yet have it.
-4. Insert the MicroSD card into your computer and select it as the Storage Device, and click `NEXT`.
+{% step %}
+### Select the SensorGnome software image&#x20;
+
+Browse to where you saved the SensorGnome software on your computer, select the file, then click `NEXT`. Download the latest SG software from [here](https://www.sensorgnome.net/download) if you don't yet have it.
+
+{% hint style="info" %}
+It's best to always have the latest software version on your computer in the event that you need to flash a new SD card. Though you can load the compressed `.zip` file directly into Raspberry Pi Imager, the process will go faster the next time if you extract the file and use the `.img` file.
+{% endhint %}
+{% endstep %}
+
+{% step %}
+### Select the MicroSD as the Storage Device, and click `NEXT`
 
 <figure><img src="../.gitbook/assets/image (44).png" alt="" width="507"><figcaption></figcaption></figure>
 
-5. Click `WRITE` and then click confirm on the warning dialog.
+
+{% endstep %}
+
+{% step %}
+### Click `WRITE` and then click confirm on the warning dialog
 
 <figure><img src="../.gitbook/assets/image (45).png" alt="" width="501"><figcaption></figcaption></figure>
+{% endstep %}
 
-6. Wait for the process to complete. There is both a writing and verification stage and together the entire process can take 10-15 minutes.
+{% step %}
+### Wait for the process to complete
+
+There is both a writing and verification stage and together the entire process can take 10-15 minutes.
 
 <figure><img src="../.gitbook/assets/image (47).png" alt="" width="507"><figcaption></figcaption></figure>
+{% endstep %}
 
-7. You're now ready for the [initial configuration as described below](initial-software-installation.md#initial-configuration).
+{% step %}
+### Move on to [initial configuration](initial-software-installation.md#initial-configuration)
+
+Once the writing and verification is completed, you're now ready for the [initial configuration as described below](initial-software-installation.md#initial-configuration).
+{% endstep %}
+{% endstepper %}
 
 #### Troubleshooting
 
@@ -55,32 +91,50 @@ It is possible to flash the SG software to a SensorStation V1 (though not V2 or 
 
 When the SG boots up for the first time after creating a new software SD card, it needs to be initialized by setting a password for it.&#x20;
 
-### Steps
+{% stepper %}
+{% step %}
+### Insert the microSD card into the Raspberry Pi and power it up
 
-1. Insert the microSD card into the Raspberry Pi and power it up with a suitable power supply (at least 2.4 amps for RPi 3 and 3 amps for RPi 4).
-2. After a minute or so, use your laptop or smartphone, look for the WiFi hotspot that the SG broadcasts. The WiFi network name will be the same as the SG serial number, e.g. `SG-B156RPI3EDBA`. If the SG has not yet been initialized, the WiFi network name will be appended with `-init` as in the example below, and will not be protected by a password.
+Make sure you use a suitable power supply — at least 2.4 amps for Raspberry Pi 3 and 3 amps for Raspberry Pi 4.
+{% endstep %}
+
+{% step %}
+### Connect to the SG's WiFi hotspot
+
+After a minute or so, use your laptop or smartphone, look for the WiFi hotspot that the SG broadcasts. The WiFi network name will be the same as the SG serial number, e.g. `SG-B156RPI3EDBA`. If the SG has not yet been initialized, the WiFi network name will be appended with `-init` as in the example below, and will not be protected by a password.
 
 <figure><img src="../.gitbook/assets/image (48).png" alt="" width="330"><figcaption></figcaption></figure>
 
-3. Connect to the WiFi network. This network uses a captive portal, like many airport and hotel WiFi networks, and this is how the password is set.&#x20;
+This network uses a captive portal, like many airport and hotel WiFi networks, and this is how the password is set.&#x20;
 
 <figure><img src="../.gitbook/assets/image (49).png" alt="" width="326"><figcaption></figcaption></figure>
 
-4. If your browser didn't automatically launch to a "login" page or you _don't_ see any prompt or message directing you to the captive portal, you may need to visit it directly. You can access it at either of the links below.
+If your browser didn't automatically launch to a "login" page or you _don't_ see any prompt or message directing you to the captive portal, you may need to visit it directly. You can access it at either of the links below.
 
 * [**`http://192.168.7.2`**](http://192.168.7.2/)
 * [**`http://sgpi.local`**](http://sgpi.local/)
 
 <figure><img src="../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
-5. Click on either of the links and you should now see the Initial Configuration page. Enter the password you wish to use and click `Submit`. Make sure you remember the password as this will be used for the SG's WiFi hotspot going forward _and_ the SensorGnome's web interface.
+Once at the page above, click on either of the two links to access the Initial Configuration page.
+{% endstep %}
+
+{% step %}
+### Enter the password you wish to use and click `Submit`
+
+Make sure you remember the password as this will be used for the SG's WiFi hotspot going forward _and_ the SensorGnome's web interface.
 
 <figure><img src="../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
 
-6. After hitting `Submit` the WiFi hotspot you were connected to will disconnect and, after a minute or two, a new hotspot will appear. This will have the SG serial number as its name, but will lack the `-init` suffix.
-7. You are now ready to [Connect to your SensorGnome](connecting-to-your-sensorgnome.md).
+{% step %}
+### [Connect to your SensorGnome](connecting-to-your-sensorgnome.md) with its new WiFi hotspot
 
-### Alternate method of configuring during the flashing process
+After hitting `Submit`, the initial configuration is complete. The WiFi hotspot you were connected to will disconnect and disappear, and after a minute or two, a _new_ hotspot will appear. This will have the SG serial number as its name, but will lack the `-init` suffix. This will be the primary method of [connecting to your SensorGnome](connecting-to-your-sensorgnome.md) and accessing the Web Interface going forward.&#x20;
+{% endstep %}
+{% endstepper %}
+
+#### Alternate method of configuring during the flashing process
 
 It's possible to configure your SG with a password during the flashing process. This feature has been deprecated in the newer Raspberry Pi Imager software, so if you wish to configure with this method, you'll need to download and use [Version 1.9.6](https://github.com/raspberrypi/rpi-imager/releases/download/v1.9.6/imager-1.9.6.exe), which is the last version to support this.
 
