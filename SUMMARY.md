@@ -31,3 +31,4 @@
 * [Motus data file formats](appendix/fileformats.md)
 * [Software History and why V2](appendix/software-history-and-why-v2.md)
 * [CTT Motus dongles](appendix/ctt-motus-dongles.md)
+* [Additional information](appendix/additional-information.md)

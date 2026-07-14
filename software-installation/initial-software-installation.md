@@ -1,150 +1,129 @@
----
-description: Flashing a microSD card, booting the SensorGnome, and connecting to it.
----
-
 # Software installation
 
-The initial installation consists of:
-
-1. flashing a microSD card with a SensorGnome release image,
-2. booting the rPi and connecting to it.
+The SensorGnome software runs off a MicroSD card. In order to install the software, it is "flashed" to the SD card using an imaging software such as Raspberry Pi Imager. After it is booted for the first time, it needs to be "initialized" by setting a password.
 
 ## Prerequisites
 
-* MicroSD-card with at least 16 GB and an adapter/reader to plug into your computer.
-* A computer with Windows/Mac OS/Linux.
+* MicroSD card with at least 16 GB. Try to avoid low quality or old SD cards, and instead spend a bit more money (\~$20) to buy a high quality card such as SanDisk Extreme Pro or Samsung Pro/High Endurance as these will reduce the likelihood of data loss or corruption.
+* A computer **AND** a method of reading and writing to a MicroSD card. Most computers do not have MicroSD slots, so a USB adapter is usually the best option.
 * The latest **SensorGnome software** release downloaded from [https://www.sensorgnome.net/download](https://www.sensorgnome.net/download)
-* **Raspberry Pi Imager** installed on your computer, the latest version can be downloaded from [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/) or at [this link](https://github.com/raspberrypi/rpi-imager/releases/download/v1.9.6/imager-1.9.6.exe) for version 1.9.6. Alternate SD card flashing software can be used as well, such as WinDiskImager, Batena Etcher, and others.
-* **RaspberryPi** 4B, 3B+, 3B, Zero-2W, or SensorStation V1.
-* Highly recommended: **internet access** for the RaspberryPi either via WiFi or ethernet.
+* **Raspberry Pi Imager** installed on your computer, the latest version can be downloaded from [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/). Other imaging software such as WinDiskImager, Balena Etcher, work as well.
+* **Raspberry Pi** 4B, 3B+, 3B, Zero-2W, or SensorStation V1.
 
-## Multiple paths to success
+## Flashing the MicroSD card
 
-There are multiple options for installing and configuring the software. The steps outlined here follow the recommended route. If something is not working for you: try an alternate route.
-
-In any case: **don't spend more than 10 minutes being blocked!** If it just doesn't work and you double-checked your steps: [ask for help](../#getting-help).
-
-## Flashing the SD-card
-
-{% hint style="info" %}
-Please use a quality microSD-card! The Samsung Pro Endurance series as well as the SanDisk Extreme Pro series are highly recommended (and under $10!). Please buy where you can ensure you are getting genuine cards, e.g. on Amazon check that the cards are "sold by Amazon.com".
-{% endhint %}
-
-{% hint style="info" %}
-SensorStations: To flash a SensorStation follow the CTT documentation to prepare your computer for the flashing operation. Use the RaspberryPi Imager as described here, however. You will need a Wifi adapter or Ethernet adapter plugged into your SensorStation.
-{% endhint %}
+The process of flashing the MicroSD card is the same if you are installing the SG software for the very first time, or if you are upgrading an existing SG with a _fresh software card_ (as opposed to upgrading over the Internet).
 
 ### Steps
 
-1. Plug the microSD-card into your laptop/computer.
-2. Launch RaspberryPi Imager and:
-   * click on _operating system_, choose _use custom_ (it's the last option), locate the SensorGnome software ZIP you downloaded\
-     <img src="../.gitbook/assets/image (8).png" alt="" data-size="original">![](<../.gitbook/assets/image (14).png>)
-   * click on _storage_ and locate the microSDcard to flash![](<../.gitbook/assets/image (20).png>)
-   * **Important and easy to overlook**: click on the gear icon at the bottom right\
-     ![](<../.gitbook/assets/image (23).png>)
-   * Focus on the settings outlined in green\
-     ![](<../.gitbook/assets/image (7).png>)
-     * Set a hostname you will use to recognize your SG during the initial set-up (not used after that so use your initials, for example).
-     * Set gnome as username and select a good password: it is used for all access to your SensorGnome (web UI, hotspot, remote management, SSH).
-     * If you will use your local WiFi to give the SensorGnome internet access configure it here, if you will use Ethernet then skip this portion.
-     * Uncheck "enable SSH" unless you have an SSH key you'd like to use, in which case you can enter it here (note that SSH is always enabled regardless of the setting here).
-     * The locale setting is ignored.
-   * Save the settings and click on 'write', wait for the microSD-card to be written
+1. Launch Raspberry Pi Imager. Download from [here](https://www.raspberrypi.com/software/) if you don't yet have it.
+2. Select the `OS` tab, then scroll down to the bottom on the right hand side to select `Use custom`
 
-{% hint style="info" %}
-Not using RaspberryPi Imager?\
-If you are using a program other than the RaspberryPi Imager to flash the microSD card then you cannot enter the initial configuration of hostname, password, and Wifi as shown above. You have two options: use the hotspot access method described below or configure internet access after flashing by placing a `wpa_supplicant.conf` file into the boot partition. The latter is a standard RaspberryPi procedure so you can follow the RaspberryPi docs.
-{% endhint %}
+<figure><img src="../.gitbook/assets/image (39).png" alt="" width="509"><figcaption></figcaption></figure>
 
-## Booting your SensorGnome
+3. Browse to where you saved the SensorGnome software on your computer, select the file, then click `NEXT`. You do not need to extract the `.zip` file prior to selecting it. Download the latest SG software from [here](https://www.sensorgnome.net/download) if you don't yet have it.
+4. Insert the MicroSD card into your computer and select it as the Storage Device, and click `NEXT`.
 
-During the boot process the RaspberryPi green LED provides feedback. Proceed as follows:
+<figure><img src="../.gitbook/assets/image (44).png" alt="" width="507"><figcaption></figcaption></figure>
 
-1. Insert the microSD card into the RaspberryPi and apply power
-2. The red LED on the RaspberryPi indicates power
-3. The green LED comes on solid when the Pi boots, thereafter it blinks about every 2 seconds:
-   * 1 flash: operating, hotspot off, and no internet access
-   * 2 flashes: operating, hotspot ON, no internet access
-   * 3 flashes: operating, internet access OK (hotspot may be on or off)
+5. Click `WRITE` and then click confirm on the warning dialog.
 
-Once you see the 2 or 3 flashes pattern you can proceed.
+<figure><img src="../.gitbook/assets/image (45).png" alt="" width="501"><figcaption></figcaption></figure>
+
+6. Wait for the process to complete. There is both a writing and verification stage and together the entire process can take 10-15 minutes.
+
+<figure><img src="../.gitbook/assets/image (47).png" alt="" width="507"><figcaption></figcaption></figure>
+
+7. You're now ready for the [initial configuration as described below](initial-software-installation.md#initial-configuration).
+
+#### Troubleshooting
+
+Usually the flashing process is straightforward, but if you have issues or the verification fails, you can try the following
+
+* Try again with no changes. Sometimes this works if, for instance, the MicroSD card reader was jostled while the process was running
+* Try a different USB port, or a different laptop if you have one
+* Try a different MicroSD card reader.&#x20;
+* Try a different MicroSD card. Older cards in particular can be prone to failing
+  * If you only have one card, sometimes it helps to delete all partitions and/or format the card before proceeding with the flashing
+* If verification fails and you have no alternative, try it in the SG anyway. Sometimes it still works.
+
+#### SensorStation V1
+
+It is possible to flash the SG software to a SensorStation V1 (though not V2 or V3). In order to do this,  follow the [CTT documentation to flash the compute module](https://cellular-tracking-technologies.github.io/ctt_documentation/flashingComputeModule.html), but use the SG software image instead of the CTT software image. You will need a WiFi adapter or Ethernet adapter plugged into your SensorStation for the initial configuration.
+
+## Initial configuration
+
+When the SG boots up for the first time after creating a new software SD card, it needs to be initialized by setting a password for it.&#x20;
+
+### Steps
+
+1. Insert the microSD card into the Raspberry Pi and power it up with a suitable power supply (at least 2.4 amps for RPi 3 and 3 amps for RPi 4).
+2. After a minute or so, use your laptop or smartphone, look for the WiFi hotspot that the SG broadcasts. The WiFi network name will be the same as the SG serial number, e.g. `SG-B156RPI3EDBA`. If the SG has not yet been initialized, the WiFi network name will be appended with `-init` as in the example below, and will not be protected by a password.
+
+<figure><img src="../.gitbook/assets/image (48).png" alt="" width="330"><figcaption></figcaption></figure>
+
+3. Connect to the WiFi network. This network uses a captive portal, like many airport and hotel WiFi networks, and this is how the password is set.&#x20;
+
+<figure><img src="../.gitbook/assets/image (49).png" alt="" width="326"><figcaption></figcaption></figure>
+
+4. If your browser didn't automatically launch to a "login" page or you _don't_ see any prompt or message directing you to the captive portal, you may need to visit it directly. You can access it at either of the links below.
+
+* [**`http://192.168.7.2`**](http://192.168.7.2/)
+* [**`http://sgpi.local`**](http://sgpi.local/)
+
+<figure><img src="../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+
+5. Click on either of the links and you should now see the Initial Configuration page. Enter the password you wish to use and click `Submit`. Make sure you remember the password as this will be used for the SG's WiFi hotspot going forward _and_ the SensorGnome's web interface.
+
+<figure><img src="../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+
+6. After hitting `Submit` the WiFi hotspot you were connected to will disconnect and, after a minute or two, a new hotspot will appear. This will have the SG serial number as its name, but will lack the `-init` suffix.
+7. You are now ready to [Connect to your SensorGnome](connecting-to-your-sensorgnome.md).
+
+### Alternate method of configuring during the flashing process
+
+It's possible to configure your SG with a password during the flashing process. This feature has been deprecated in the newer Raspberry Pi Imager software, so if you wish to configure with this method, you'll need to download and use [Version 1.9.6](https://github.com/raspberrypi/rpi-imager/releases/download/v1.9.6/imager-1.9.6.exe), which is the last version to support this.
+
+1. Plug the microSD card into your laptop/computer.
+2.  Launch Raspberry Pi Imager and:
+
+    * click on _operating system_, choose _use custom_ (it's the last option), locate the SensorGnome software ZIP you downloaded
+
+    <br>
+
+    <figure><img src="../.gitbook/assets/image (14).png" alt="" width="563"><figcaption></figcaption></figure>
+
+* click on _storage_ and locate the microSD card to flash
+
+<figure><img src="../.gitbook/assets/image (20).png" alt="" width="563"><figcaption></figcaption></figure>
+
+*   **Important and easy to overlook**: click on the gear icon at the bottom right<br>
+
+    <figure><img src="../.gitbook/assets/image (23).png" alt="" width="563"><figcaption></figcaption></figure>
+*   Focus on the settings outlined in green
+
+    * Set a hostname you will use to recognize your SG during the initial set-up (not used after that so use your initials, for example).
+    * Set gnome as username and select a good password: it is used for all access to your SensorGnome (web UI, hotspot, remote management, SSH).
+    * If you will use your local WiFi to give the SensorGnome internet access configure it here, if you will use Ethernet then skip this portion.
+    * Uncheck "enable SSH" unless you have an SSH key you'd like to use, in which case you can enter it here (note that SSH is always enabled regardless of the setting here).
+    * The locale setting is ignored.
+
+    <figure><img src="../.gitbook/assets/image (7).png" alt="" width="563"><figcaption></figcaption></figure>
+
+
+* Save the settings and click on 'write', wait for the microSD card to be written
 
 #### **Timing**
 
 * you will see a few erratic blinks the first 40 seconds
 * 2 flashes should start after 1 minute
 * 3 flashes should start after 1:20 to 2 minutes
-* it can take 3 minutes 'til the 3 flashes show up (e.g. due to lost DHCP packets), but after 2 minutes you're probably best off starting to pull out your phone and looking for the hot-spot...
+* it can take 3 minutes 'til the 3 flashes show up (e.g. due to lost DHCP packets), but after 2 minutes you're probably best off starting to pull out your phone and looking for the hot-spot.
 
 #### Locating the green LED
 
-Raspberry Pi 3B/4B (here with a cellular HAT):![](<../.gitbook/assets/image (22).png>)
+<figure><img src="../.gitbook/assets/image (22).png" alt="" width="563"><figcaption><p>Raspberry Pi 3B/4B (here with a cellular HAT)</p></figcaption></figure>
 
-Raspberry Pi Zero-2W:\
-![](<../.gitbook/assets/image (16).png>)
+<figure><img src="../.gitbook/assets/image (16).png" alt="" width="563"><figcaption><p><strong>Raspberry Pi Zero-2W</strong></p></figcaption></figure>
 
-SensorStation:\
-![](<../.gitbook/assets/image (17).png>)
-
-#### Troubleshooting
-
-* If you never get to a blinking green LED try the following:
-  * use a different power supply
-  * unplug any attached USB devices
-  * reflash the microSD card,
-  * use a different microSD card.
-* If you only see 2 flashes but expected the RaspberryPi to have internet access, try the following options:
-  * wait another minute
-  * proceed using the hotspot
-  * ensure you used the correct SSID and password in the RaspberryPi Imager configuration (i.e., reflash the card)
-  * use your phone to check that the WiFi works and provides internet access
-
-## Additional information
-
-### **Why a disk image?**
-
-The reason the SensorGnome release is distributed as disk images is that the system requires 2 disk partitions (two filesystems). One small FAT32 partition which the boot loader understands and can load the initial program from. And then one large partition that has a proper Linux filesystem that is way too complex for a bootloader and that the entire system runs from (and that "gets started" by that "initial program"). The image packs everything together (and is the standard way of doing these things).
-
-Previous versions of SensorGnome had only one large FAT32 partition occupying the entire SDcard and instead of having a second partition for the linux filesystem they put that inside one big file within the FAT32 partition. So it was a bit like nested dolls. Technically that works, but the performance suffers because every filesystem access requires two levels of mapping and access, and it's very unconventional though creative.
-
-### **Why does flashing require root/admin/superuser permissions?**
-
-In order to write an image to a disk one has to read/write to the raw disk, which inherently provides access to all the data that may be on the disk. That's a security issue in that it circumvents all the access controls that the operating system normally imposes on disk access. For this reason the operating system only allows the super-user/root/admin to access raw disk. And that's why Etcher (and any program that writes an image) has to ask for this permission.
-
-### **Does the hot-spot turn on at boot time?**
-
-Currently the hot-spot always turns on at boot time. It can be turned on/off on the network tab of the web UI. It is planned to provide a switch to enable/disable it at boot, but for the moment to facilitate debugging the hot-spot is always on at boot.
-
-### **What are hostnames of the form 192-168-0-18.my.local-ip.co for?**
-
-The local-ip.co host names have to do with HTTPS. A host name of the form `A-B-C-D.my.local-ip.co` resolves to the IP address `A.B.C.D`, this is how the connection is routed to the SensorGnome. The SensorGnome's web server holds a wildcard TLS certificate for `*.my.local-ip.co` which allows the user's web server to connect without warning or issues.
-
-The wildcard certificate is issued by Lets Encrypt and has a validity duration of 3 months. This means that the certificate needs to be updated by some means, this is not currently implemented.
-
-### **Why doesn't the SensorGnome use a self-signed certificate?**
-
-Browser support for self-signed certificates has been steadily shrinking. The warnings have been getting more dire and some browsers on some operating systems have eliminated support entirely. Initial testing with self-signed certificates resulted in lots of difficulties and confusion.
-
-### **What are all the partitions on the SDcard for?**
-
-When the SDcard is initially flashed from the image there are two partitions/filesystems:
-
-* a 256MB `boot` partition holding a FAT32 filesystem that is used in the initial boot stage.
-* an approx 4GB `rootfs` partition holding an EXT4 Linux filesystem with the operating system, this partition cannot (easily) be mounted on a Windows system and may show up as empty or unused, but it certainly isn't!
-* the rest of the SDcard is empty/unpartitioned.
-
-When the SDcard is first booted a third partition is created:
-
-* a large `data` partition filling the rest of the SDcard (e.g. about 26GB on a 32GB card) holding a FAT32 filesystem that is used to store the SensorGnome's config and data.
-
-### **What time is reported for detections that occur before time synchronization?**
-
-The Raspberry Pis do not have a real-time clock (RTC) chip that retains the time between system reboots or power cycles. Time is only kept while the operating system is running. The operating system writes the current time to a file every 11 minutes. At boot time, time is initialized to the last thus saved timestamp. As a result, until a fresh time synchronization happens (whether Network Time Protocol NTP or GPS) the SensorGnome thinks it did a quick reboot right after saving the time.
-
-There are three ways the SensorGnome can synchronize time: NTP, GPS, or RTC chip. If the SG has internet connection it will start trying to synchronize via NTP. If the SG has a GPS (such as the Adafruit GPS HAT) it will synchronize as soon as the GPS signals a fix. If the SG has an Adafruit GPS HAT and the RTC built into that HAT's GPS module has the time (i.e. power was not lost or the battery is functioning) then the RTC time will be used.
-
-Radio tag/pulse detections occur independently of time synchronization, i.e., the SG does not wait for time sync before starting the radios. For any detections that are made the name of the file in which the detections are save has a letter that indicates the time sync state. Specifically, if the letter at he end of the ISO timestamp in the filename is the std 'Z' then the time is synchronized, if the letter is a 'P' then it is not.
-
-Note that in older versions of the software the timestamps of a SensorGnome without time syn were way in the past, such as pre-2010. This is no longer the case because it prevents HTTPS communication due to the fact that all certificates are flagged as invalid.
-
+<figure><img src="../.gitbook/assets/image (17).png" alt="" width="563"><figcaption><p>SensorStation V1</p></figcaption></figure>
