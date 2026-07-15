@@ -6,38 +6,63 @@ Wherever possible, SG's should be connected to the Internet for three benefits:
 * Remote monitoring of the SG's operation, including radio operation, SD-card usage, upload progress, detections, etc.
 * Remote administration of the SG to perform necessary upgrades, enable/disable the hot-spot, reboot, etc.
 
-## Option 1: Wired internet over Ethernet
+## Option 1: WiFi&#x20;
 
-The simplest method of syncing data over the internet is to plug the RPi into the Internet via an Ethernet cable. If the internet is not password-protected and the SG can obtain an address via DHCP the SensorGnome should connect to the Motus server within minutes and begin syncing data.
-
-### Steps:
-
-1. Connect an Ethernet cable that is non-password-protected to the SG.
-2. Confirm that the SG has connectivity in its Web UI or on SG Hub
-
-<figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption><p>The SG web interface will indicate whether an internet connection exists, as well as the particular type, in this case Ethernet.</p></figcaption></figure>
-
-## Option 2: WiFi Client
+The SensorGnome can connect to any standard WiFi network using the Raspberry Pi's built-in WiFi client. This is accessed and configured on the SG's web interface.&#x20;
 
 {% hint style="warning" %}
-The RPi3 only supports the 2.4Ghz band, not the 5Ghz band. The RPi4 supports both bands.
+The RPi 3 only supports the 2.4 Ghz band, not the 5 Ghz band. The RPi 4 supports both bands.
 {% endhint %}
 
-### **Steps:**
+{% stepper %}
+{% step %}
+### Connect to the SensorGnome's web interface
 
-1. Connect to the SensorGnome's web UI using its WiFi hotspot. (See [here](connecting-to-your-sensorgnome.md#option-1-connect-via-wifi-hotspot) for instructions)
-2. On the `NETWORK` tab, click on the "pencil" icon in the WiFi Client widget to edit the configuration
+&#x20;See [Connecting to your SensorGnome](connecting-to-your-sensorgnome.md) if you need a refresher.
+{% endstep %}
 
-<figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+{% step %}
+### On the `NETWORK` tab, click on the "pencil" icon in the WiFi Client widget to edit the configuration
 
-2. Enter the WiFi's SSID (the WiFi network name) and passphrase (password) and click the green check-mark to save. (Changing the country code from 00 to your country's two letter ISO code, e.g. US, CA, DE, et. is optional and unlikely to change anything, code 00 is a "lowest common denominator".)
-3. After several seconds the Network Connectivity widget should indicate you are connected to the Internet.
+<figure><img src="../.gitbook/assets/image (42).png" alt="" width="563"><figcaption></figcaption></figure>
+{% endstep %}
 
-<figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption><p>This web interface will confirm if you are connected</p></figcaption></figure>
+{% step %}
+### Enter the WiFi network name and password
+
+Enter the WiFi's SSID (the WiFi network name) and passphrase (password) and click the green check-mark to save.
+
+If there is no password, leave that field blank (you will still see the `*******` placeholder when it's blank). Changing the country code from 00 to your country's two letter ISO code, e.g. US, CA, DE, et. is optional and unlikely to change anything; code 00 is a "lowest common denominator".
+{% endstep %}
+
+{% step %}
+### After several seconds, the Network Connectivity widget should indicate connectivity
+
+<figure><img src="../.gitbook/assets/image (43).png" alt="" width="563"><figcaption><p>This web interface will confirm if you are connected</p></figcaption></figure>
 
 {% hint style="info" %}
 On the RPi3 and RPi4 the WiFi hotspot functionality is independent of the WiFi client functionality and both can be active at the same time. However, the hot-spot may temporarily disconnect and reconnect when configuring the WiFi client because it may have to switch channel as it must use the channel dictated by the WiFi client connection.
 {% endhint %}
+{% endstep %}
+{% endstepper %}
+
+## Option 2: Wired internet over Ethernet
+
+The simplest method of syncing data over the internet is to plug the RPi into the Internet via an Ethernet cable. If the internet is not password-protected and the SG can obtain an address via DHCP the SensorGnome should connect to the Motus server within minutes and begin syncing data.
+
+{% stepper %}
+{% step %}
+### Connect an Ethernet cable that is non-password-protected to the SG
+{% endstep %}
+
+{% step %}
+### Confirm that the SG has connectivity in its Web UI&#x20;
+
+[Connect to your SensorGnome](connecting-to-your-sensorgnome.md) then access the `NETWORK` tab to check the current status
+
+<figure><img src="../.gitbook/assets/image (37).png" alt="" width="563"><figcaption><p>The SG web interface will indicate whether an internet connection exists, as well as the particular type, in this case Ethernet.</p></figcaption></figure>
+{% endstep %}
+{% endstepper %}
 
 ## Option 3: Cellular
 
@@ -45,15 +70,17 @@ Cellular connectivity is supported using the[ SixFab 4G/LTE cellular modem kit/H
 
 Simply installing the HAT or plugging the SIM7600 device in _should_ cause everything to magically function, provided the SIM you are using is activated and has a valid data plan. The SixFab modem kit has an integrated GPS, though in the case of the Waveshare device you'll need to purchase a simple (passive) GPS antenna with a u.Fl connector and plug it into the GPS port (you have to open the device as shown in the instructions provided by Waveshare).
 
-<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19).png" alt="" width="563"><figcaption></figcaption></figure>
 
 If you are experiencing issues with cell connectivity, please refer to the [Troubleshooting ](cell-modem-troubleshooting.md)section.
 
 ## SG Hub
 
-SG Hub, at [**www.sensorgnome.net**](https://www.sensorgnome.net/), provides a convenient way to check on an internet-connected SensorGnome.
+SG Hub, at [**www.sensorgnome.net**](https://www.sensorgnome.net/), provides a convenient way to check on an internet-connected SensorGnome. Along with the most recent check-in time, there are a variety of other diagnostic and status plots to help asses the "health" of the various SensorGnomes.
 
-<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption><p>SG Hub will show recently connected SG</p></figcaption></figure>
+Generally, within a minute or two of connecting for the first time, a SensorGnome will show up in the "Recently installed Sensorgnomes" list. You can sort this list by any of the columns, and click on any of the SGs for more detailed info about that particular SG.
+
+<figure><img src="../.gitbook/assets/image (41).png" alt="" width="563"><figcaption><p>SG Hub will show recently connected SG</p></figcaption></figure>
 
 ## Automatic upload process
 
