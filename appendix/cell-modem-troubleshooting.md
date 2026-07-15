@@ -92,7 +92,7 @@ sudo systemctl stop sg-control check-modem.timer check-modem ModemManager
 sudo atcom AT#STIA?            
 sudo atcom AT#STIA=1           
 sudo shutdown now
-sudo atcom AT+QSTK?            # confirm the change. Should be QSTK=1,0,300
+sudo atcom AT+QSTK?            
 sudo atcom AT+CFUN=4           # RF off (airplane mode)
 sleep 60                       # give the SIM time to give up
 sudo atcom AT+CFUN=1           # RF back on
