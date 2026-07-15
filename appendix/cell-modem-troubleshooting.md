@@ -2,9 +2,9 @@
 
 ## Cell modem power
 
-Almost all cell modems compatible with SensorGnomes use a lot of peak power and they exceed the power capabilities of rPi 3B and 4B USB ports. You _must:_
+Almost all cell modems compatible with SensorGnomes use a lot of peak power and they exceed the power capabilities of RPi 3B and 4B USB ports. You _must:_
 
-* use a cell HAT or a USB cell modem plugged into a powered USB hub, never attempt to power the cell modem from the rPi's USB ports (a cell HAT needs to be plugged into USB for data, it doesn't receive power through the cable, however)
+* use a cell HAT or a USB cell modem plugged into a powered USB hub, never attempt to power the cell modem from the RPi USB ports (a cell HAT needs to be plugged into USB for data, it doesn't receive power through the cable, however)
 * use a 20W power adapter (a good 15W may work)
 * use short, quality USB power cables
 
@@ -12,7 +12,7 @@ If the cell modem does not have enough power it will seem to work fine but not c
 
 ### Cell HATs and USB
 
-If you use a cell HAT it is easy to overlook that it came with a short USB cable. The 40-pin connector of the rPi provides power and some low-level controls (e.g. to detect that a cell HAT is installed). However, the cell modem is fundamentally a USB device: all the data goes over USB. Thus you must use the USB cable to connect the HAT to one of the USB ports.
+If you use a cell HAT it is easy to overlook that it came with a short USB cable. The 40-pin connector of the RPi provides power and some low-level controls (e.g. to detect that a cell HAT is installed). However, the cell modem is fundamentally a USB device: all the data goes over USB. Thus you must use the USB cable to connect the HAT to one of the USB ports.
 
 ### Resetting the cell modem
 
@@ -27,6 +27,81 @@ Most problems occur when starting cell service, i.e., placing a fresh SIM card i
 * Many SIMs sold for SensorGnome type of usage work globally or continent-wide across many providers and many frequencies. This is a large space for the modem to scan and attempt to get service, either from "native" networks or via roaming.
 * The cell modems used for SensorGnomes and the software are not as sophisticated as cell phones. Things take more time.
 * The "Super SIM" made by Twilio (and resold by SixFab among others) has multiple personalities used for different regions of the world. It switches personality after failing to connect for a number of minutes. You may be waiting for it to fail using the AsiaPac personality, then the China personality, then the South America personality, then...
+
+### Ensure that the SIM Toolkit is enabled
+
+In order to properly cycle between the various regional profiles (IMSI) the modem requires SIM Toolkit (STK) to be enabled. This is the service that "listens" for when the SIM requests a new IMSI after failing to with the previous one. If Sim Toolkit is not enabled, a cell modem may indefinitely try to connect with the same unsupported IMSI. For many modems, Sim Toolkit is disabled by default.
+
+The command differs somewhat depending if you are using a Quectel or Telit modem. If you can see the SG and the modem, you'll be able to see the name of the modem manufacturer printed on it.
+
+The following commands are made via an SSH session. Copy and paste the code as needed into the terminal, entering the SG password when prompted.&#x20;
+
+For information SSH'ing into your SensorGnome, visit here.
+
+{% tabs %}
+{% tab title="Quectel modem" %}
+**Quectel EG25 modems**
+
+If you can physically reach the SG in order to unplug it and plug it back in after running a shutdown command, then copy and paste the following into your SSH session.
+
+```shellscript
+sudo systemctl stop sg-control check-modem.timer check-modem ModemManager
+sudo atcom AT+QSTK?            # check current SIM Tookit status
+sudo atcom AT+QSTK=1,0,300     # explicitly enable SIM Toolkit
+sudo atcom AT+QSTK?            # confirm the change. Should be QSTK=1,0,300
+sudo shutdown now
+```
+
+If you cannot reach the SG then run this modified set of commands. It doesn't as effectively reset the modem, but since you can't reach the SG to turn it back on it's the next best option.
+
+```shellscript
+sudo systemctl stop sg-control check-modem.timer check-modem ModemManager
+sudo atcom AT+QSTK?            # check current SIM Tookit status
+sudo atcom AT+QSTK=1,0,300     # explicitly enable SIM Toolkit
+sudo atcom AT+QSTK?            # confirm the change. Should be QSTK=1,0,300
+sudo atcom AT+CFUN=4           # RF off (airplane mode)
+sleep 60                       # give the SIM time to give up
+sudo atcom AT+CFUN=1           # RF back on
+sleep 30                       # rest again
+sudo atcom AT+QSTK?            # Double check the change. Should be QSTK=1,0,300
+sudo reboot now
+```
+{% endtab %}
+
+{% tab title="Telit modem" %}
+**Telit LE910C4 modems**<br>
+
+{% hint style="warning" %}
+This has not been widely tested
+{% endhint %}
+
+If you can physically reach the SG in order to unplug it and plug it back in after running a shutdown command, then copy and paste the following into your SSH session.
+
+```shellscript
+sudo systemctl stop sg-control check-modem.timer check-modem ModemManager
+sudo atcom AT#STIA?            
+sudo atcom AT#STIA=1           
+sudo shutdown now
+```
+
+If you cannot reach the SG then run this modified set of commands. It doesn't as effectively reset the modem, but since you can't reach the SG to turn it back on it's the next best option.
+
+```shellscript
+
+sudo systemctl stop sg-control check-modem.timer check-modem ModemManager
+sudo atcom AT#STIA?            
+sudo atcom AT#STIA=1           
+sudo shutdown now
+sudo atcom AT+QSTK?            # confirm the change. Should be QSTK=1,0,300
+sudo atcom AT+CFUN=4           # RF off (airplane mode)
+sleep 60                       # give the SIM time to give up
+sudo atcom AT+CFUN=1           # RF back on
+sleep 30                       # rest again
+sudo atcom AT+QSTK?            # Double check the change. Should be QSTK=1,0,300
+sudo reboot now
+```
+{% endtab %}
+{% endtabs %}
 
 ### Try your cell phone's SIM!
 
@@ -44,7 +119,7 @@ The SensorGnome software does not interact with the cell modem a whole lot. The 
 
 A `check-modem` service also checks on the modem state and if it is not connected asks it to connect every few minutes. It tries to balance the need to let the modem "do its thing" trying to find a cell provider vs. ensuring that the cell modem doesn't give up and just sits there idle. Unfortunately there is no status indication for when it's still trying vs. has given up.
 
-Once the cell modem connects everything happens automagically through a set of standard Linux services and the ModemManager. An IP address is acquired, a route to the internet is established, and its priority is such that ethernet and then wifi take precedence if they're available.
+Once the cell modem connects everything happens automagically through a set of standard Linux services and the ModemManager. An IP address is acquired, a route to the internet is established, and its priority is such that Ethernet and then WiFi take precedence if they're available.
 
 ## What to look for in the Web UI
 
@@ -236,6 +311,6 @@ false,"timing":false,"split24":false,"pps":true}
 ...
 ```
 
-This shows that the GPS has a fix and the lines with a `$GPG` prefix scroll by as the GPS reports position and time updates. If `gpsmon` just shows some cryptic info (JSON) and stops it may be worthwhile to restart `gpsd` using `sudo systemctl restart gpsd.service`&#x20;
+This shows that the GPS has a fix and the lines with a `$GPG` prefix scroll by as the GPS reports position and time updates. If `gpsmon` just shows some cryptic info (JSON) and stops it may be worthwhile to restart `gpsd` using `sudo systemctl restart gpsd.service`
 
 Note that the GPS info in the web interface is entirely dependent on `gpsd` so if `gpsd` (e.g. observed via `gpsmon`) doesn't know about the GPS then the web UI can't show anything. `Gpsd` only knows about a GPS after it receives and can parse some stanzas.
