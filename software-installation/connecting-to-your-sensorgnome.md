@@ -26,7 +26,7 @@ Once connected to the SG's WiFi hotspot, you will still need to log in to view t
 
 <figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption><p>The hotspot doesn't provide access to the internet, but the "login" page (the captive portal) is how you access the SG web interface.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption><p>Your browser may display a prompt like this to direct you to the captive portal</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (35).png" alt="" width="539"><figcaption><p>Your browser may display a prompt like this to direct you to the captive portal</p></figcaption></figure>
 
 If you _don't_ see any prompt or message directing you to the captive portal, you may need to visit it directly. You can access it at either of the links below.
 
@@ -39,7 +39,7 @@ Bookmark these links in your web browser so that you can easily navigate to them
 
 You should now see a webpage with something like the page below. This is the captive portal, and is directing you to the _actual_ web interface page. **Click on either of the two links.**
 
-<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption><p>The captive portal provides two options for accessing the web interface, along with an option to disable the captive portal itself</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (34).png" alt="" width="510"><figcaption><p>The captive portal provides two options for accessing the web interface, along with an option to disable the captive portal itself</p></figcaption></figure>
 {% endstep %}
 
 {% step %}
@@ -47,11 +47,11 @@ You should now see a webpage with something like the page below. This is the cap
 
 Having clicked on either of the two links in the captive portal, you should now see the web interface log in page. The _**username**_ is already prepopulated as `gnome`. The _**password**_ is the same as the WiFi password you just used to connect to the hotspot.
 
-<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption><p>SG login dialog. The username is always gnome, and the password is the same as the WiFi hotspot password.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (32).png" alt="" width="563"><figcaption><p>SG login dialog. The username is always gnome, and the password is the same as the WiFi hotspot password.</p></figcaption></figure>
 
 Once logged in, you'll see something like this. You are now in the web interface and can continue to configuring the SG, downloading data, or just checking its status.
 
-<figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption><p>The SensorGnome Web Interface</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (36).png" alt="" width="563"><figcaption><p>The SensorGnome Web Interface</p></figcaption></figure>
 {% endstep %}
 {% endstepper %}
 
@@ -90,16 +90,16 @@ If your SensorGnome and your laptop/phone are both connected to the internet AND
 2. Open the SensorGnome Hub (SGhub) website at [https://www.sensorgnome.net](https://www.sensorgnome.net), logging in with your Motus user name and password when prompted.
 3. The table at the top shows the most recently initialized SensorGnomes: yours may already be at the top! You can identify it using the label column which should show the hostname you entered.
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt="" width="563"><figcaption></figcaption></figure>
 
 4. Click on the row with your SensorGnome, this switches to the station tab; at the top-right is a link to the web UI:
 
-<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25).png" alt="" width="563"><figcaption></figcaption></figure>
 
 5. If you have already configured your SG with a password, enter it when prompted. If this SG has not yet been initialized, you'll have the opportunity to set its password here.
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt="" width="563"><figcaption></figcaption></figure>
 
 You are now connected to the web UI
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6).png" alt="" width="563"><figcaption></figcaption></figure>

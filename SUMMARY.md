@@ -2,13 +2,6 @@
 
 * [Introduction and Overview](README.md)
 
-## HARDWARE INSTALLATION
-
-* [Anatomy of a SensorGnome](hardware-installation/anatomy.md)
-* [How to build a SensorGnome](hardware-installation/buildsg.md)
-* [SensorGnome power](hardware-installation/sensorgnome-power.md)
-* [GPS options](hardware-installation/gps-options.md)
-
 ## Software Installation
 
 * [Software installation](software-installation/initial-software-installation.md)
@@ -24,6 +17,13 @@
 * [Uploading a local tag database](maintenance/localtagdb.md)
 * [Software upgrade](maintenance/upgrade-notes.md)
 * [Updating the boot number](maintenance/updating-the-boot-number.md)
+
+## HARDWARE
+
+* [Anatomy of a SensorGnome](hardware/anatomy.md)
+* [How to build a SensorGnome](hardware/buildsg.md)
+* [SensorGnome power](hardware/sensorgnome-power.md)
+* [GPS options](hardware/gps-options.md)
 
 ## Appendix
 
