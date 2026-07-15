@@ -2,21 +2,15 @@
 
 * [Introduction and Overview](README.md)
 
-## Software Installation
+## Setup and Operation
 
-* [Software installation](software-installation/initial-software-installation.md)
-* [Connecting to your SensorGnome](software-installation/connecting-to-your-sensorgnome.md)
-* [Radio Configuration](software-installation/radio-configuration.md)
-* [Internet configuration](software-installation/internet-configuration.md)
-* [Cell modem troubleshooting](software-installation/cell-modem-troubleshooting.md)
-
-## Maintenance
-
-* [Checking a SensorGnome in the field](maintenance/whattobring.md)
-* [Downloading data](maintenance/downloading-data.md)
-* [Uploading a local tag database](maintenance/localtagdb.md)
-* [Software upgrade](maintenance/upgrade-notes.md)
-* [Updating the boot number](maintenance/updating-the-boot-number.md)
+* [Software installation](setup-and-operation/initial-software-installation.md)
+* [Connecting to your SensorGnome](setup-and-operation/connecting-to-your-sensorgnome.md)
+* [Radio configuration](setup-and-operation/radio-configuration.md)
+* [Internet configuration](setup-and-operation/internet-configuration.md)
+* [Checking a SensorGnome in the field](setup-and-operation/whattobring.md)
+* [Downloading data](setup-and-operation/downloading-data.md)
+* [Software upgrade](setup-and-operation/upgrade-notes.md)
 
 ## HARDWARE
 
@@ -32,3 +26,5 @@
 * [Software History and why V2](appendix/software-history-and-why-v2.md)
 * [CTT Motus dongles](appendix/ctt-motus-dongles.md)
 * [Additional information](appendix/additional-information.md)
+* [Uploading a local tag database](appendix/localtagdb.md)
+* [Cell modem troubleshooting](appendix/cell-modem-troubleshooting.md)

@@ -72,7 +72,7 @@ Simply installing the HAT or plugging the SIM7600 device in _should_ cause every
 
 <figure><img src="../.gitbook/assets/image (19).png" alt="" width="563"><figcaption></figcaption></figure>
 
-If you are experiencing issues with cell connectivity, please refer to the [Troubleshooting ](cell-modem-troubleshooting.md)section.
+If you are experiencing issues with cell connectivity, please refer to the [Troubleshooting ](../appendix/cell-modem-troubleshooting.md)section.
 
 ## SG Hub
 
