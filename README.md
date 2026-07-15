@@ -30,12 +30,12 @@ For updates on the status please refer to the [Motus Community Forum](http://com
   * Info about your hardware
   * Having your SG connected to the internet
   * SensorGnome ID (or the hostname used during configuration)
-  * Motus project number and station ID and/or deployment  ID (if applicable)
+  * Motus project number and station ID and/or deployment ID (if applicable)
   * Log files using the web UI or `/var/log/syslog` and `/var/log/sg-control.log` grabbed via SSH
 
 ## What is a SensorGnome?
 
-A SensorGnome is an automated radio receiver, designed to detect and record radio signals transmitted by wildlife tracking tags, without the need for any person to be present.&#x20;
+A SensorGnome is an automated radio receiver, designed to detect and record radio signals transmitted by wildlife tracking tags, without the need for any person to be present.
 
 At its core, a SensorGnome is powered by a **Raspberry Pi (RPi)**. The RPi runs the software that listens for and records the radio data picked up by the antennas. In addition to the RPi, a SensorGnome will have one or more USB dongles -- "software-defined radios" -- that take the raw radio signals from the antennas and convert it into a digital form that can be recognized and recorded by the RPi. Finally, the SensorGnome will include a GPS and power supply, all of which is typically housed in a heavy-duty plastic case.
 
@@ -45,18 +45,18 @@ Throughout this document, we will often refer to a SensorGnome as an **SG**, and
 
 ## About this guide
 
-This guide is divided into four sections:
+This guide is divided into three sections:
 
-* Hardware components and configuration, i.e. misc information about radios, USB, HATs, etc.
-* Initial software installation and configuration, i.e., how to get started
-* Data download and station maintenance, i.e., checking things when on-site
-* Appendix with additional information
+* Setup and operation: Initial software installation, configuration, data downloading, etc
+* Hardware components: misc information about radios, USB, HATs, how to assemble an SG
+* Appendix with additional information, resources, and troubleshooting tips
 
 ## Initial deployment checklist
 
-1. Install the software, configure SensorGnome password, verify access via hot-spot or internet.
-2. Verify detection of GPS and optional hardware button/LED.
-3. Configure radios and their ports, verify operation using test tags.
-4. Verify network configuration and file upload, alternatively verify downloading files to phone/laptop.
-5. Create/verify connection of SensorGnome to Motus receiver deployment.
-6. Perform an end-to-end check from test tags to uploaded data.
+1. Install the software and configure the SensorGnome password
+2. Connect to your SensorGnome
+   1. verify GPS and time source
+   2. Configure radios and their ports, verify operation using test tags.
+   3. Configure / verify network configuration&#x20;
+3. Create new station on Motus.org and associate this SG with it. (See [here](https://app.gitbook.com/s/jf0K5m6GrB75xw7Xweac/stations/station-metadata) for more about station metadata management.)
+4. Perform an end-to-end check from test tags to uploaded data.

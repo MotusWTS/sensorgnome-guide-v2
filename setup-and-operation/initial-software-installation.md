@@ -28,8 +28,6 @@ Download from [here](https://www.raspberrypi.com/software/) if you don't yet hav
 {% step %}
 ### Select `Use custom` on the right hand side of the `OS` tab
 
-Select `Use custom` and click `NEXT` to allow you to load the SG software &#x20;
-
 <figure><img src="../.gitbook/assets/image (39).png" alt="" width="509"><figcaption></figcaption></figure>
 {% endstep %}
 
@@ -133,6 +131,14 @@ Make sure you remember the password as this will be used for the SG's WiFi hotsp
 After hitting `Submit`, the initial configuration is complete. The WiFi hotspot you were connected to will disconnect and disappear, and after a minute or two, a _new_ hotspot will appear. This will have the SG serial number as its name, but will lack the `-init` suffix. This will be the primary method of [connecting to your SensorGnome](connecting-to-your-sensorgnome.md) and accessing the Web Interface going forward.&#x20;
 {% endstep %}
 {% endstepper %}
+
+#### Troubleshooting
+
+
+
+
+
+
 
 #### Alternate method of configuring during the flashing process
 
