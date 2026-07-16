@@ -28,3 +28,4 @@
 * [Additional information](appendix/additional-information.md)
 * [Uploading a local tag database](appendix/localtagdb.md)
 * [Cell modem troubleshooting](appendix/cell-modem-troubleshooting.md)
+* [SSH into a SensorGnome](appendix/ssh-into-a-sensorgnome.md)

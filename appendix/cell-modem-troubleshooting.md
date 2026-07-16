@@ -36,7 +36,7 @@ The command differs somewhat depending if you are using a Quectel or Telit modem
 
 The following commands are made via an SSH session. Copy and paste the code as needed into the terminal, entering the SG password when prompted.&#x20;
 
-For information SSH'ing into your SensorGnome, visit here.
+For information SSH'ing into your SensorGnome, visit [here](ssh-into-a-sensorgnome.md).
 
 {% tabs %}
 {% tab title="Quectel modem" %}
