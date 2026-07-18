@@ -5,7 +5,7 @@ In order to check the status of a SensorGnome, download data, or modify the conf
 {% hint style="danger" %}
 Before you start, look at the LED lights on the Raspberry Pi. The green LED should display a characteristic flashing pattern.
 
-* Green LED flashing **once**. Booted up and operating normally. Hotspot has been turned off \[this is uncommon'.
+* Green LED flashing **once**. Booted up and operating normally. Hotspot has been turned off \[this is uncommon].
 * Green LED flashing **twice**. Booted up and operating normally. Hotspot should be _on_.
 * Green LED flashing **three times**. Booted up, operating normally, and connected to the internet. Hotspot should be _on_.
 
