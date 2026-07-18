@@ -2,13 +2,23 @@
 
 In order to check the status of a SensorGnome, download data, or modify the configuration, you must first connect to it using a laptop or phone. The primary method is by connecting to a WiFi hotspot that the SG broadcasts (Option 1).
 
+{% hint style="danger" %}
+Before you start, look at the LED lights on the Raspberry Pi. The green LED should display a characteristic flashing pattern.
+
+* Green LED flashing **once**. Booted up and operating normally. Hotspot has been turned off \[this is uncommon'.
+* Green LED flashing **twice**. Booted up and operating normally. Hotspot should be _on_.
+* Green LED flashing **three times**. Booted up, operating normally, and connected to the internet. Hotspot should be _on_.
+
+If, a few minutes after booting up, you see anything other than this pattern, there is likely something wrong with the software card, a faulty power supply, or bad hardware.
+{% endhint %}
+
+## Option 1: Connect via WiFi hotspot <a href="#wifi" id="wifi"></a>
+
+By default, a SensorGnome broadcasts a WiFi hotspot whenever it is powered on, assuming it is functioning normally. The WiFi hotspot _only_ serves to establish a connection between the SG and your computer or phone; it does not connect the SG to the internet.
+
 {% hint style="info" %}
 You can use either a laptop of smartphone to connect to a SensorGnome. However, due to the larger screen for working, ease of downloading files, taking full-page screenshots, and other benefits, a laptop is usually preferred if available.
 {% endhint %}
-
-## Option 1: Connect via WiFi hotspot
-
-By default, a SensorGnome broadcasts a WiFi hotspot whenever it is powered on, assuming it is functioning normally. The WiFi hotspot _only_ serves to establish a connection between the SG and your computer or phone; it does not connect the SG to the internet.
 
 {% stepper %}
 {% step %}
@@ -81,8 +91,49 @@ Tips:
 * The web browser used in the captive portal mode (i.e. to allow you to log-in or accept terms) may not be the regular web browser you use on your device. If it does not work well or is closed on you open your standard browser and try `http://192.168.7.2` or `http://sgpi.local`.
 * If the captive portal ends up being broken or too confusing turn it off on the landing page at `http://192.168.7.2`, `http://sgpi.local`. Then possibly disconnect and reconnect to the hot-spot and navigate to one of the those two URLs explicitly by bringing up a browser. Your device operating system will warn about "no internet access" and some "stay connected anyway" setting may be necessary.
 * If your laptop is struggling to connect to the WiFi hotspot, try a smartphone; or vice versa.
+* If nothing works, try connecting via Ethernet
 
-## Option 2: Connect to your SensorGnome via Internet
+## Option 2: Connect via Ethernet <a href="#ethernet" id="ethernet"></a>
+
+With a computer, you can connect directly to your SensorGnome with an Ethernet cable. This can be helpful if you are having difficulties with the WiFi hotspot, but the SG itself still seems to be running properly based on the green LED pattern.
+
+{% stepper %}
+{% step %}
+### Connect an Ethernet cable to both the RPi and your computer
+
+Wait a minute or so for the connection to be established. The lights on the Ethernet port on the RPi and/or your computer should start flashing to indicate activity. It nothing happens here, that's an indication that something else is wrong (bad Ethernet cable,&#x20;
+{% endstep %}
+
+{% step %}
+### Open a browser and visit `sgpi.local`
+
+For an Ethernet connection, `sgpi.local` is likely to be the only method of accessing the web interface (`192.168.7.2` will probably not work).
+{% endstep %}
+
+{% step %}
+### Follow the instructions in the browser to access the web interface
+
+If you get a security warning about an insecure site, click "Advanced" option, and "Proceed to sgpi.local".
+
+<figure><img src="../.gitbook/assets/image (71).png" alt="" width="548"><figcaption><p>If you get a notice about an insecure site, proceed to spgi.local anyway</p></figcaption></figure>
+
+Select the appropriate link from the options presented. If you see an option for `Ethernet`, choose this. Otherwise try the `WiFi Client` option, or `sgpi.local`. Anything beginning with `192.168.7.2` is unlikely to work if you are not connected to the WiFi hotspot.&#x20;
+
+<figure><img src="../.gitbook/assets/image (73).png" alt="" width="526"><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (72).png" alt=""><figcaption><p>Sometimes the <code>Ethernet</code> option is not available but either <code>sgpi.local</code> again or whichever option is <strong>not</strong> <code>WiFi hotspot</code> should work.</p></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### You should now be connected to the web interface
+
+{% hint style="info" %}
+When connected via Ethernet, you should use the hostname `sgpi.local` any time you need to specify it, such as establishing a [FTP](downloading-data.md#using-an-ftp-client) connection or [SSH](../appendix/ssh-into-a-sensorgnome.md) session.
+{% endhint %}
+{% endstep %}
+{% endstepper %}
+
+## Option 3: Connect to your SensorGnome via Internet
 
 If your SensorGnome and your laptop/phone are both connected to the internet AND on the same WiFi or Ethernet network, you can connect to it this way. This can be helpful in cases where the WiFi hotspot method described above is not working.
 
