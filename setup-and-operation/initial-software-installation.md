@@ -10,8 +10,8 @@ The SensorGnome software runs off a MicroSD card. In order to install the softwa
 
 * MicroSD card with at least 16 GB. Try to avoid low quality or old SD cards, and instead spend a bit more money (\~$20) to buy a high quality card such as SanDisk Extreme Pro or Samsung Pro/High Endurance as these will reduce the likelihood of data loss or corruption.
 * A computer **AND** a method of reading and writing to a MicroSD card. Most computers do not have MicroSD slots, so a USB adapter is usually the best option.
-* The latest **SensorGnome software** release downloaded from [https://www.sensorgnome.net/download](https://www.sensorgnome.net/download). As of 2026-07-14 the latest&#x20;
-* **Raspberry Pi Imager** installed on your computer, the latest version can be downloaded from [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/). Other imaging software, such as WinDiskImager or Balena Etcher, work as well.
+* The latest **SensorGnome software** release downloaded from [https://www.sensorgnome.net/download](https://www.sensorgnome.net/download).&#x20;
+* **Raspberry Pi Imager** installed on your computer, the latest version can be downloaded from [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/). Other imaging sftware, such as WinDiskImager or Balena Etcher, work as well.
 * **Raspberry Pi** 4B, 3B+, 3B, Zero-2W, or SensorStation V1.
 
 ## Flashing the MicroSD card
