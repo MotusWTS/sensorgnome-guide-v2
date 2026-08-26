@@ -58,6 +58,10 @@ You should now see a webpage with something like the page below. This is the cap
 Having clicked on either of the two links in the captive portal, you should now see the web interface log in page. The _**username**_ is already prepopulated as `gnome`. The _**password**_ is the same as the WiFi password you just used to connect to the hotspot.
 
 <figure><img src="../.gitbook/assets/image (32).png" alt="" width="563"><figcaption><p>SG login dialog. The username is always gnome, and the password is the same as the WiFi hotspot password.</p></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### You should now be connected to the web interface
 
 Once logged in, you'll see something like this. You are now in the web interface and can continue to configuring the SG, downloading data, or just checking its status.
 
@@ -117,25 +121,51 @@ If you get a security warning about an insecure site, click "Advanced" option, a
 
 <figure><img src="../.gitbook/assets/image (71).png" alt="" width="548"><figcaption><p>If you get a notice about an insecure site, proceed to spgi.local anyway</p></figcaption></figure>
 
-Select the appropriate link from the options presented. If you see an option for `Ethernet`, choose this. Otherwise try the `WiFi Client` option, or `sgpi.local`. Anything beginning with `192.168.7.2` is unlikely to work if you are not connected to the WiFi hotspot.&#x20;
+Select the appropriate link from the options presented. If you see an option for `Ethernet`, choose this. Otherwise try the `WiFi Client` option, or `sgpi.local`. Anything beginning with `192.168.7.2` is _unlikely_ to work if you are not connected to the WiFi hotspot.&#x20;
 
 <figure><img src="../.gitbook/assets/image (73).png" alt="" width="526"><figcaption></figcaption></figure>
-
-<figure><img src="../.gitbook/assets/image (72).png" alt=""><figcaption><p>Sometimes the <code>Ethernet</code> option is not available but either <code>sgpi.local</code> again or whichever option is <strong>not</strong> <code>WiFi hotspot</code> should work.</p></figcaption></figure>
 {% endstep %}
 
 {% step %}
-### You should now be connected to the web interface
+### &#x20;You should now be connected to the web interface
 
-{% hint style="info" %}
+{% hint style="warning" %}
 When connected via Ethernet, you should use the hostname `sgpi.local` any time you need to specify it, such as establishing a [FTP](downloading-data.md#using-an-ftp-client) connection or [SSH](../appendix/ssh-into-a-sensorgnome.md) session.
 {% endhint %}
 {% endstep %}
 {% endstepper %}
 
-## Option 3: Connect to your SensorGnome via Internet
+## Option 3: Connect via LAN (Local Area Network)
 
-If your SensorGnome and your laptop/phone are both connected to the internet AND on the same WiFi or Ethernet network, you can connect to it this way. This can be helpful in cases where the WiFi hotspot method described above is not working.
+If your computer and/or smartphone are connected to the same _local_ network as your SG (e.g. connected to the same router, whether by WiFi or Ethernet) you should be able to access your SensorGnome by the hostname `sgpi.local`.
+
+{% stepper %}
+{% step %}
+### Open a web browser and visit `sgpi.local`
+
+After navigating to `sgpi.local`, follow the prompts to access the Web Interface.&#x20;
+
+<figure><img src="../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### **Enter the credentials for the web interface**
+
+<figure><img src="../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+
+{% step %}
+### &#x20;You should now be connected to the web interface
+{% endstep %}
+
+{% step %}
+<figure><img src="../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+{% endstep %}
+{% endstepper %}
+
+### Connect to your SensorGnome via Internet
+
+If your SensorGnome and your laptop/phone are both connected to the internet and on the same WiFi or Ethernet network, you can connect to it this way. This can be helpful in cases where the WiFi hotspot method described above is not working.
 
 1. First: verify that your SG's green LED shows 3 flashes every 2 seconds. If it doesn't, your RPi SG does not have internet access.
 2. Open the SensorGnome Hub (SGhub) website at [https://www.sensorgnome.net](https://www.sensorgnome.net), logging in with your Motus user name and password when prompted.
