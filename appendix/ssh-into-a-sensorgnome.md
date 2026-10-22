@@ -2,6 +2,10 @@
 
 Occasionally it's useful to "SSH into" your SensorGnome so you can run commands directly against the operating system, copy files and logs, and perform other tasks not possible from the SG web interface. Below are two examples for Windows.
 
+{% hint style="info" %}
+The same process is used to SSH into SensorStations, substituting `192.168.7.2` or `sgpi.local` with `sensorstation.local`, or whatever IP address the SensorSation reports.&#x20;
+{% endhint %}
+
 ## Option 1: Using PuTTY
 
 {% stepper %}
