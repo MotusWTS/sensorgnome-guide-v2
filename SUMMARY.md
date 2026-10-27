@@ -25,6 +25,7 @@
 * [Motus data file formats](appendix/fileformats.md)
 * [Software History and why V2](appendix/software-history-and-why-v2.md)
 * [CTT Motus dongles](appendix/ctt-motus-dongles.md)
+* [Flashing custom firmware to FunCube dongles](appendix/flashing-custom-firmware-to-funcube-dongles.md)
 * [Additional information](appendix/additional-information.md)
 * [Uploading a local tag database](appendix/localtagdb.md)
 * [Cell modem troubleshooting](appendix/cell-modem-troubleshooting.md)
